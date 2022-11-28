@@ -2,35 +2,57 @@ package hostel;
 
 public class Hostel {
 	
-	static String name;
-	static String dropDay;
-	static int deliveryTime;
-	static String deliveryDay;
-	static int revenue;
 	
+
+	String name;
+	private String dropDay;
+	private int deliveryTime;
+	private String deliveryDay;
+	private int revenue = 0;
 	
+	public Hostel(String name) {
+		this.name = name;
+	}
 	
-	public void updateDropDay(String day) {
+	public void setDropDay(String day) {
 		this.dropDay = day;
 	}
 	
 	
-	public void updateDeliveryTime(int time) {
+	public void setDeliveryTime(int time) {
 		this.deliveryTime = time;
 	}
 	
 	
-	public void updateDeliveryDay(String day) {
+	public void setDeliveryDay(String day) {
 		this.deliveryDay = day;
 	}
-
-}
-
-class Krishna extends Hostel{
 	
-	public Krishna(){
-		Krishna.name = "Krishna";
+	public void setHostelRevenue(int amount) {
+		this.revenue += amount;
 	}
 	
+	public int getRevenue() {
+		return revenue;
+	}
+
+
+	public String getDropDay() {
+		return dropDay;
+	}
+
+
+	public int getDeliveryTime() {
+		return deliveryTime;
+	}
+
+
+	public String getDeliveryDay() {
+		return deliveryDay;
+	}
+	
+	
+
 }
+
 
