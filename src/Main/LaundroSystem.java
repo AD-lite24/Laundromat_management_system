@@ -1,6 +1,9 @@
+package Main;
 import java.util.*;
 
-public class System {
+public class LaundroSystem {
+	
+	
 	
 	private static Map<Integer, Student> dataBase = new HashMap<>();
 	

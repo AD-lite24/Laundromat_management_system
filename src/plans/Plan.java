@@ -1,3 +1,4 @@
+package plans;
 
 public interface Plan {
 	

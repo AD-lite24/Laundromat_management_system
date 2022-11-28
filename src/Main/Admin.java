@@ -1,3 +1,4 @@
+package Main;
 import java.util.*;
 
 public class Admin {
@@ -20,7 +21,7 @@ public class Admin {
 	
 	public void login(String userName, int pwd) {
 		if (userName.equals(this.userName) && pwd == this.pin) {
-			System.out.println()
+			System.out.println();
 		}
 	}
 	

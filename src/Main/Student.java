@@ -1,3 +1,6 @@
+package Main;
+import plans.Plan;
+
 class DroppedClothes{
 	String status;
 	
