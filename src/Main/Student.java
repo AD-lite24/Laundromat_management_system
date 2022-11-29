@@ -1,11 +1,30 @@
 package Main;
 import plans.Plan;
 
+class ClothesAlreadyDroppedException extends Exception{
+	public ClothesAlreadyDroppedException(String message){
+		super(message);
+	}
+}
+
+class WeightLimitExceededException extends Exception{
+	public WeightLimitExceededException(String message){
+		super(message);
+	}
+}
+
 class DroppedClothes{
 	private String status;
 	private int quantiy;
 	private float weight;
+	private boolean alreadyDropped = false;
 
+	public boolean isAlreadyDropped() {
+		return alreadyDropped;
+	}
+	public void setAlreadyDropped(boolean alreadyDropped) {
+		this.alreadyDropped = alreadyDropped;
+	}
 	public String getStatus() {
 		return status;
 	}
@@ -24,7 +43,6 @@ class DroppedClothes{
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
-	
 }
 
 public class Student {
@@ -50,9 +68,14 @@ public class Student {
 		this.numOfWashes = plan.getNumOfWashes();
 	}
 
-	public void dropClothes(int quantity, float weight){
+	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException{
+		if (clothes.isAlreadyDropped()){
+			throw new ClothesAlreadyDroppedException("Clothes already dropped");
+		}
 		this.clothes.setQuantiy(quantity);
 		this.clothes.setWeight(weight);
+		clothes.setAlreadyDropped(true);
+
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
@@ -61,8 +84,7 @@ public class Student {
 	}
 
 	public void registerForLaundro(){
-		LaundroSystem.addStudent(this);
-
+		LaundroSystem.addStudent(this);	
 	}
 
 
