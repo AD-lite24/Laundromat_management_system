@@ -1,9 +1,12 @@
 package Main;
 import java.util.*;
+import hostel.*;
 
 public class LaundroSystem {
-	
-	
+
+	public LaundroSystem(){
+		
+	}
 	
 	private static Map<Integer, Student> dataBase = new HashMap<>();
 	
