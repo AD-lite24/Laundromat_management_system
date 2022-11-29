@@ -21,12 +21,14 @@ public class Admin {
 		
 	}
 	
+	//Login to admin, needs to work with gui 
 	public void login(String userName, int pwd) {
 		if (userName.equals(Admin.userName) && pwd == Admin.pin) {
 			System.out.println();
 		}
 	}
 	
+	//Logout of admin, needs to work with gui
 	public void logout() {
 		
 	}
