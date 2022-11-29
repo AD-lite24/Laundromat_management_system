@@ -7,6 +7,12 @@ class ClothesAlreadyDroppedException extends Exception{
 	}
 }
 
+class ClothesNotDroppedException extends Exception{
+	public ClothesNotDroppedException(String message){
+		super (message);
+	}
+}
+
 class WeightLimitExceededException extends Exception{
 	public WeightLimitExceededException(String message){
 		super(message);
@@ -19,7 +25,7 @@ class DroppedClothes{
 	private float weight;
 	private boolean alreadyDropped = false;
 
-	public boolean isAlreadyDropped() {
+	public boolean getIsAlreadyDropped() {
 		return alreadyDropped;
 	}
 	public void setAlreadyDropped(boolean alreadyDropped) {
@@ -68,7 +74,7 @@ public class Student {
 	}
 
 	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
-		if (clothes.isAlreadyDropped()){
+		if (clothes.getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}
 		if (weight > 2){
@@ -89,13 +95,23 @@ public class Student {
 		LaundroSystem.addStudent(this);	
 	}
 
-	public String getClothesStatus(){
+	public String getClothesStatus() throws ClothesNotDroppedException {
+		if (!clothes.getIsAlreadyDropped()) throw new ClothesNotDroppedException("Clothes not dropped");
 		return clothes.getStatus();
 	}
 
 	//To implement
+	//What is price per laundry
 	public void getStudentInfo(){
 
+	}
+
+	public void recieveClothes(){
+		if (clothes.getStatus().equals("On Delivery")){
+			System.out.println("Success");
+			clothes.setAlreadyDropped(false);
+			clothes.setStatus("Delivered");
+		}
 	}
 
 	@Override
