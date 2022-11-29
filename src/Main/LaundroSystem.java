@@ -12,6 +12,7 @@ public class LaundroSystem {
 	
 	public static void addStudent(Student student) {
 		dataBase.put(student.id, student);
+		
 	}
 	
 	public static Map<Integer, Student> getDataBase() {

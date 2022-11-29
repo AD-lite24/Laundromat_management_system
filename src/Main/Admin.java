@@ -33,9 +33,7 @@ public class Admin {
 		return revenue;
 	}
 
-	public void setRevenue(int revenue) {
-		this.revenue = revenue;
-	}
+	//Make method to get revenue per hostel
 	
 	
 	

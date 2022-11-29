@@ -35,6 +35,7 @@ public class Student {
 	Plan plan;
 	int moneyCharged = 0;
 	int numOfWashes;
+
 	
 	DroppedClothes clothes;
 
@@ -50,11 +51,18 @@ public class Student {
 	}
 
 	public void dropClothes(int quantity, float weight){
-		
+		this.clothes.setQuantiy(quantity);
+		this.clothes.setWeight(weight);
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
-		
+		this.moneyCharged += numOfWashes*20;
+		this.numOfWashes += numOfWashes;
+	}
+
+	public void registerForLaundro(){
+		LaundroSystem.addStudent(this);
+
 	}
 
 
