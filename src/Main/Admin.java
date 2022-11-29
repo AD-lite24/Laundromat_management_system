@@ -1,6 +1,8 @@
 package Main;
 import java.util.*;
 
+import hostel.Hostel;
+
 public class Admin {
 	
 	private int revenue = 0;
@@ -34,7 +36,32 @@ public class Admin {
 	}
 
 	//Make method to get revenue per hostel
-	
+	//Make a revenue class and override the toString method to print the details per hostel in list format 
+	public void getRevenuePerHostel(){
+
+	}
+
+	//iterate through the database HashMap
+	public void printDetailsOfAllStudents(){
+
+	}
+
+	//Return laundry Status of each student, don't forget to make an array for possible states 
+	public String checkLaundyStatus(Student student){
+
+		return "";
+	}
+
+	//Schedule drop time for each hostel
+	public void scheduleDropTime(Hostel hostel, int time, int day){
+		
+	}
+
+
+
+
+
+
 	
 	
 	

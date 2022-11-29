@@ -53,8 +53,6 @@ public class Student {
 	Plan plan;
 	int moneyCharged = 0;
 	int numOfWashes;
-
-	
 	DroppedClothes clothes;
 
 	public Student(int id, String name, long phoneNumber, Plan plan) {
@@ -66,11 +64,15 @@ public class Student {
 
 		this.moneyCharged += plan.getCost();
 		this.numOfWashes = plan.getNumOfWashes();
+		this.clothes = new DroppedClothes();
 	}
 
-	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException{
+	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
 		if (clothes.isAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
+		}
+		if (weight > 2){
+			throw new WeightLimitExceededException("Weight above 2kg");
 		}
 		this.clothes.setQuantiy(quantity);
 		this.clothes.setWeight(weight);
@@ -87,5 +89,13 @@ public class Student {
 		LaundroSystem.addStudent(this);	
 	}
 
+	public String getClothesStatus(){
+		return clothes.getStatus();
+	}
+
+	//To implement
+	public void getStudentInfo(){
+
+	}
 
 }
