@@ -17,7 +17,7 @@ public class LaundroSystem {
 	}
 	
 	public static Map<Integer, Student> getDataBase() {
-		
+
 		return dataBase; 
 	}
 	

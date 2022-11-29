@@ -45,7 +45,7 @@ public class Admin {
 
 	//iterate through the database HashMap
 	public void printDetailsOfAllStudents(){
-
+			
 	}
 
 	//Return laundry Status of each student, don't forget to make an array for possible states 

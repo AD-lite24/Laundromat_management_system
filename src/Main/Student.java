@@ -98,4 +98,10 @@ public class Student {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", plan=" + plan
+				+ ", moneyCharged=" + moneyCharged + ", numOfWashes=" + numOfWashes + ", clothes=" + clothes + "]";
+	}
+
 }
