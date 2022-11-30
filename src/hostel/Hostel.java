@@ -8,6 +8,12 @@ public class Hostel {
 	private int deliveryTime;
 	private String deliveryDay;
 	private int revenue = 0;
+
+	// create 13 objects for each hostel
+	public Hostel(String name, String dropDay){
+		this.name=name;
+		this.dropDay= dropDay;
+	}
 	
 	public Hostel(String name) {
 		this.name = name;
@@ -30,6 +36,7 @@ public class Hostel {
 	public void setHostelRevenue(int amount) {
 		this.revenue += amount;
 	}
+	
 	
 	public int getRevenue() {
 		return revenue;

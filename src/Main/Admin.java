@@ -1,6 +1,8 @@
 package Main;
 
 
+import java.util.Map.Entry;
+
 import hostel.Hostel;
 
 public class Admin {
@@ -24,11 +26,14 @@ public class Admin {
 	//Login to admin, needs to work with gui 
 	public void login(String userName, int pwd) {
 		if (userName.equals(Admin.userName) && pwd == Admin.pin) {
-			System.out.println();
+			System.out.println("Welcome");
+		}
+		else{
+			System.out.println("Error");
 		}
 	}
 	
-	//Logout of admin, needs to work with gui
+	//Logout of admin, needs to work with gui and switch to student/admin page, use exception handling
 	public void logout() {
 		
 	}
@@ -39,24 +44,28 @@ public class Admin {
 
 	//Make method to get revenue per hostel
 	//Make a revenue class and override the toString method to print the details per hostel in list format 
-	public void getRevenuePerHostel(){
-		
+	public int getRevenuePerHostel(Hostel hostel){
+		return hostel.getRevenue();
 	}
 
 	//iterate through the database HashMap
 	public void printDetailsOfAllStudents(){
-		System.out.println(LaundroSystem.getDataBase());
+		for( Entry<Integer, Student> entry : LaundroSystem.getDataBase().entrySet() ){
+			System.out.println( entry.getKey() + " : " + entry.getValue() );
+		}
+		
 	}
 
 	//Return laundry Status of each student, don't forget to make an array for possible states 
-	public String checkLaundyStatus(Student student){
+	// public String checkLaundyStatus(int id, int date){
 		
-		return "";
-	}
+	// 	return student.clothes.getStatus();
+	// }
 
 	//Schedule drop time for each hostel
-	public void scheduleDropTime(Hostel hostel, int time, int day){
-		
+	public void scheduleDeliveryTime(Hostel hostel, int time, String day){
+		hostel.setDeliveryTime(time);
+		hostel.setDeliveryDay(day);
 	}
 
 
