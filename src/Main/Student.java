@@ -1,4 +1,5 @@
 package Main;
+import hostel.Hostel;
 import plans.Plan;
 
 class ClothesAlreadyDroppedException extends Exception{
@@ -60,13 +61,15 @@ public class Student {
 	int moneyCharged = 0;
 	int numOfWashes;
 	DroppedClothes clothes;
+	Hostel hostel;
 
-	public Student(int id, String name, long phoneNumber, Plan plan) {
+	public Student(int id, String name, long phoneNumber, Plan plan, Hostel hostel) {
 
 		this.id = id;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.plan = plan;
+		this.hostel = hostel;
 
 		this.moneyCharged += plan.getCost();
 		this.numOfWashes = plan.getNumOfWashes();
