@@ -1,5 +1,6 @@
 package Main;
 import plans.Plan;
+import hostel.Hostel;
 
 class ClothesAlreadyDroppedException extends Exception{
 	public ClothesAlreadyDroppedException(String message){
@@ -59,13 +60,15 @@ public class Student {
 	Plan plan;
 	int moneyCharged = 0;
 	int numOfWashes;
+	Hostel hostel;
 	DroppedClothes clothes;
 
-	public Student(int id, String name, long phoneNumber, Plan plan) {
+	public Student(int id, String name, long phoneNumber, Hostel hostel, Plan plan) {
 
 		this.id = id;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+		this.hostel=hostel;
 		this.plan = plan;
 
 		this.moneyCharged += plan.getCost();
@@ -100,6 +103,9 @@ public class Student {
 		return clothes.getStatus();
 	}
 
+	public Hostel getHostel(){
+		return this.hostel;
+	}
 	//To implement
 	//What is price per laundry
 	public void getStudentInfo(){

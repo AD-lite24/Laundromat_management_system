@@ -4,10 +4,11 @@ package Main;
 import java.util.Map.Entry;
 
 import hostel.Hostel;
+// import hostel.Krishna;
 
 public class Admin {
 	
-	private int revenue = 0;
+	private int totalRevenue=0;
 	
 	static private final String userName = "admin";
 	static private final int pin = 1234;
@@ -39,14 +40,14 @@ public class Admin {
 	}
 
 	public int getRevenue() {
-		return revenue;
+		// add for all the objects of hostel class
+		// can't be resolved from admin class
+		// krishna.calculateHostelRevenue();
+
+		return totalRevenue;
 	}
 
-	//Make method to get revenue per hostel
-	//Make a revenue class and override the toString method to print the details per hostel in list format 
-	public int getRevenuePerHostel(Hostel hostel){
-		return hostel.getRevenue();
-	}
+
 
 	//iterate through the database HashMap
 	public void printDetailsOfAllStudents(){
@@ -56,18 +57,13 @@ public class Admin {
 		
 	}
 
-	//Return laundry Status of each student, don't forget to make an array for possible states 
-	// public String checkLaundyStatus(int id, int date){
-		
-	// 	return student.clothes.getStatus();
-	// }
-
 	//Schedule drop time for each hostel
 	public void scheduleDeliveryTime(Hostel hostel, int time, String day){
 		hostel.setDeliveryTime(time);
 		hostel.setDeliveryDay(day);
 	}
 
+	
 
 
 

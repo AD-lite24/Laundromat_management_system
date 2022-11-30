@@ -13,7 +13,7 @@ public class LaundroSystem implements Serializable{
 
 		//Hostel
 		Hostel krishna = new Hostel("Krishna");
-
+		
 		//Plans
 		Plan plan1 = new Plan(0, 0, null, 0);
 		
@@ -24,7 +24,7 @@ public class LaundroSystem implements Serializable{
 	public static void addStudent(Student student) {
 
 		dataBase.put(student.id, student);
-
+		
 	}
 	
 	public static Map<Integer, Student> getDataBase() {

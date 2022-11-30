@@ -1,4 +1,6 @@
 package hostel;
+import Main.Revenue;
+
 
 //should hostel be subclassed? Check problem statement and let me know
 public class Hostel {
@@ -18,6 +20,10 @@ public class Hostel {
 	public Hostel(String name) {
 		this.name = name;
 	}
+
+	public String getHostelName(){
+		return this.name;
+	}
 	
 	public void setDropDay(String day) {
 		this.dropDay = day;
@@ -33,14 +39,18 @@ public class Hostel {
 		this.deliveryDay = day;
 	}
 	
-	public void setHostelRevenue(int amount) {
-		this.revenue += amount;
-	}
-	
-	
-	public int getRevenue() {
+	public int calculateHostelRevenue() {
+		Revenue rev=new Revenue();
+		revenue= rev.calculateRevenue(this.name);
+		System.out.println(rev);
 		return revenue;
 	}
+
+	
+	// public int getRevenue() {
+		
+	// 	return revenue;
+	// }
 
 
 	public String getDropDay() {
