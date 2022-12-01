@@ -64,7 +64,7 @@ public class Student {
 	String name;
 	long phoneNumber;
 	Plan plan;
-	int moneyCharged = 0;
+	float moneyCharged = 0;
 	int numOfWashes;
 	DroppedClothes clothes;
 	Hostel hostel;
@@ -105,11 +105,13 @@ public class Student {
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}
 		if (weight > 2){
+			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("Weight above 2kg");
 		}
 		this.clothes.setQuantiy(quantity);
 		this.clothes.setWeight(weight);
 		clothes.setAlreadyDropped(true);
+		clothes.setStatus("Waiting to be picked up"); //Initial status
 
 	}
 

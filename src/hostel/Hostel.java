@@ -7,7 +7,7 @@ public class Hostel {
 	private String dropDay;
 	private int deliveryTime;
 	private String deliveryDay;
-	private int revenue = 0;
+	private float revenue = 0;
 	
 	public Hostel(String name) {
 		this.name = name;
@@ -27,11 +27,11 @@ public class Hostel {
 		this.deliveryDay = day;
 	}
 	
-	public void setHostelRevenue(int amount) {
+	public void setHostelRevenue(float amount) {
 		this.revenue += amount;
 	}
 	
-	public int getRevenue() {
+	public float getRevenue() {
 		return revenue;
 	}
 
