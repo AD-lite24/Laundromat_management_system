@@ -76,6 +76,22 @@ public class Student {
 		this.clothes = new DroppedClothes();
 	}
 
+	public Plan getPlan() {
+		return plan;
+	}
+
+	public void setPlan(Plan plan) {
+		this.plan = plan;
+	}
+
+	public Hostel getHostel() {
+		return hostel;
+	}
+
+	public void setHostel(Hostel hostel) {
+		this.hostel = hostel;
+	}
+
 	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
 		if (clothes.getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
@@ -106,7 +122,7 @@ public class Student {
 	//To implement
 	//What is price per laundry
 	public void getStudentInfo(){
-
+		
 	}
 
 	public void recieveClothes(){

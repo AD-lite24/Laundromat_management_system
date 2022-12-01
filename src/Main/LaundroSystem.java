@@ -11,8 +11,15 @@ public class LaundroSystem implements Serializable{
 	public LaundroSystem(){
 		Admin admin = new Admin();
 
-		//Hostel
+		//Hostels
 		Hostel krishna = new Hostel("Krishna");
+		Hostel vyas = new Hostel("Vyas");
+		Hostel meera = new Hostel("Meera");
+		Hostel gandhi = new Hostel("Gandhi");
+		Hostel ram = new Hostel("Ram");
+		Hostel budh = new Hostel("Budh");
+		Hostel shankar = new Hostel("Shankar");
+
 
 		//Plans
 		Plan plan1 = new Plan(0, 0, null, 0);
@@ -24,6 +31,7 @@ public class LaundroSystem implements Serializable{
 	public static void addStudent(Student student) {
 
 		dataBase.put(student.id, student);
+		student.getHostel().setHostelRevenue(student.getPlan().getCost());
 
 	}
 	
