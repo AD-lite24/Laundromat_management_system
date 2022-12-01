@@ -6,8 +6,6 @@ import hostel.Hostel;
 
 public class Admin {
 	
-	private int revenue = 0;
-	
 	static private final String userName = "admin";
 	static private final int pin = 1234;
 	
@@ -34,15 +32,12 @@ public class Admin {
 		
 	}
 
-	public int getRevenue() {
-		
-		return revenue;
-	}
-
 	//Make method to get revenue per hostel
 	//Make a revenue class and override the toString method to print the details per hostel in list format 
 	public void getRevenuePerHostel(){
-		
+		for (Hostel hostel : LaundroSystem.hostelList){
+			System.out.println("Revenue for hostel " + hostel.getName() + "is " + hostel.getRevenue());
+		}
 	}
 
 	//iterate through the database HashMap
@@ -52,13 +47,18 @@ public class Admin {
 
 	//Return laundry Status of each student, don't forget to make an array for possible states 
 	public String checkLaundyStatus(Student student){
+		try {
+			return student.getClothesStatus();
+		} catch (ClothesNotDroppedException e) {
+			return e.getMessage();
+		}
 		
-		return "";
 	}
 
 	//Schedule drop time for each hostel
-	public void scheduleDropTime(Hostel hostel, int time, int day){
-		
+	public void scheduleDropTime(Hostel hostel, int time, String day){
+		hostel.setDeliveryDay(day);
+		hostel.setDeliveryTime(time);
 	}
 
 

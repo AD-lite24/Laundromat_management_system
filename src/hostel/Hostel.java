@@ -3,7 +3,7 @@ package hostel;
 //should hostel be subclassed? Check problem statement and let me know
 public class Hostel {
 
-	String name;
+	private String name;
 	private String dropDay;
 	private int deliveryTime;
 	private String deliveryDay;
@@ -48,6 +48,10 @@ public class Hostel {
 
 	public String getDeliveryDay() {
 		return deliveryDay;
+	}
+
+	public String getName() {
+		return name;
 	}
 	
 	
