@@ -23,7 +23,7 @@ public class Admin {
 	//Login to admin, needs to work with gui 
 	public void login(String userName, int pwd) {
 		if (userName.equals(Admin.userName) && pwd == Admin.pin) {
-			System.out.println();
+			System.out.println("login successful");
 		}
 	}
 	
@@ -56,9 +56,13 @@ public class Admin {
 	}
 
 	//Schedule drop time for each hostel
-	public void scheduleDropTime(Hostel hostel, int time, String day){
+	public void scheduleDeliveryTime(Hostel hostel, int time, String day){
 		hostel.setDeliveryDay(day);
 		hostel.setDeliveryTime(time);
+	}
+
+	public void scheduleDropDay(String day, Hostel hostel){
+		hostel.setDropDay(day);
 	}
 
 

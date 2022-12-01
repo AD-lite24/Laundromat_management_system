@@ -10,12 +10,18 @@ class ClothesAlreadyDroppedException extends Exception{
 
 class ClothesNotDroppedException extends Exception{
 	public ClothesNotDroppedException(String message){
-		super (message);
+		super(message);
 	}
 }
 
 class WeightLimitExceededException extends Exception{
 	public WeightLimitExceededException(String message){
+		super(message);
+	}
+}
+
+class UserEntryError extends Exception {
+	public UserEntryError(String message){
 		super(message);
 	}
 }
@@ -92,7 +98,9 @@ public class Student {
 		this.hostel = hostel;
 	}
 
+	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
 	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
+		
 		if (clothes.getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}
@@ -112,8 +120,16 @@ public class Student {
 		this.hostel.setHostelRevenue(numOfWashes*20);
 	}
 
-	public void registerForLaundro(){
-		LaundroSystem.addStudent(this);	
+	public void registerForLaundro() throws UserEntryError{
+		if (LaundroSystem.getDataBase().containsKey(this.id)){
+			throw new UserEntryError("This ID is already registered");
+		}
+		else {
+			LaundroSystem.addStudent(this);	
+			System.out.println("Details:");
+			System.out.println(this);
+			System.out.println("Your alloted drop day is " + this.getHostel().getDropDay());
+		}
 	}
 
 	public String getClothesStatus() throws ClothesNotDroppedException {
@@ -123,8 +139,9 @@ public class Student {
 
 	//To implement
 	//What is price per laundry
+	//What about status?
 	public void getStudentInfo(){
-
+		
 	}
 
 	public void recieveClothes(){
@@ -132,6 +149,9 @@ public class Student {
 			System.out.println("Success");
 			clothes.setAlreadyDropped(false);
 			clothes.setStatus("Delivered");
+		}
+		else{
+			System.out.println("Clothes not reached");
 		}
 	}
 
