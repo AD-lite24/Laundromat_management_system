@@ -90,14 +90,29 @@ public class StudentS extends JFrame {
 				String Sname = name.getText();
 				String Sid = id.getText();
 				String Sphone = phone.getText();
+				String someId="something";
+				
+				
 				
 				try {
-					FileWriter fw = new FileWriter("src/Data/"+Sid+".txt",true);
-					fw.write(Sid+" "+Sname+" "+Sphone);
-					fw.write(System.getProperty("line.separator"));
-					fw.close();
 					
-					message.setText("Success");
+					if(Sid==someId) {
+//						show already registered window
+					}
+					
+					else {
+						FileWriter fw = new FileWriter("src/Data/"+Sid+".txt",true);
+						fw.write(Sid+" "+Sname+" "+Sphone);
+						fw.write(System.getProperty("line.separator"));
+						fw.close();
+						
+						message.setText("Success");
+						StudentWashPlans swp = new StudentWashPlans();
+						swp.setVisible(true);
+						dispose();
+					}
+					
+					
 					
 				}
 				catch(Exception ex) {
