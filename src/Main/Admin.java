@@ -3,6 +3,7 @@ package Main;
 
 import hostel.Hostel;
 
+
 public class Admin {
 	
 	private int revenue = 0;
@@ -34,6 +35,7 @@ public class Admin {
 	}
 
 	public int getRevenue() {
+		
 		return revenue;
 	}
 

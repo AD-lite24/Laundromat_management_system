@@ -108,6 +108,8 @@ public class Student {
 	public void addAdditonalWashes(int numOfWashes){
 		this.moneyCharged += numOfWashes*20;
 		this.numOfWashes += numOfWashes;
+
+		this.hostel.setHostelRevenue(numOfWashes*20);
 	}
 
 	public void registerForLaundro(){
@@ -122,7 +124,7 @@ public class Student {
 	//To implement
 	//What is price per laundry
 	public void getStudentInfo(){
-		
+
 	}
 
 	public void recieveClothes(){
