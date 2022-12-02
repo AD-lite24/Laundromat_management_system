@@ -9,14 +9,13 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class StudentD extends JFrame {
+public class StudentCheckStatus extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField id;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -25,7 +24,7 @@ public class StudentD extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentD frame = new StudentD();
+					StudentCheckStatus frame = new StudentCheckStatus();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +36,7 @@ public class StudentD extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StudentD() {
+	public StudentCheckStatus() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,33 +45,25 @@ public class StudentD extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("ID No");
-		lblNewLabel.setBounds(49, 50, 52, 25);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel);
-		
-		id = new JTextField();
-		id.setBounds(204, 50, 127, 25);
+		JLabel id = new JLabel("ID No");
+		id.setBounds(79, 73, 52, 25);
+		id.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(id);
-		id.setColumns(10);
 		
-		JLabel lblDate = new JLabel("Date");
-		lblDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate.setBounds(49, 121, 52, 25);
-		contentPane.add(lblDate);
+		textField = new JTextField();
+		textField.setBounds(246, 73, 119, 25);
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Drop");
+		JButton btnNewButton = new JButton("Status");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				checks plans and hostel date
+//				check status
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(138, 206, 117, 33);
+		btnNewButton.setBounds(161, 166, 111, 33);
 		contentPane.add(btnNewButton);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(204, 121, 127, 25);
-		contentPane.add(comboBox);
 	}
+
 }

@@ -9,13 +9,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class StudentB extends JFrame {
+public class StudentDropLaundry extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField id;
 
 	/**
 	 * Launch the application.
@@ -24,7 +25,7 @@ public class StudentB extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentB frame = new StudentB();
+					StudentDropLaundry frame = new StudentDropLaundry();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +37,7 @@ public class StudentB extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StudentB() {
+	public StudentDropLaundry() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,24 +47,32 @@ public class StudentB extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("ID No");
-		lblNewLabel.setBounds(66, 63, 52, 25);
+		lblNewLabel.setBounds(49, 50, 52, 25);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(215, 63, 122, 25);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		id = new JTextField();
+		id.setBounds(204, 50, 127, 25);
+		contentPane.add(id);
+		id.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Expenses");
+		JLabel lblDate = new JLabel("Date");
+		lblDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate.setBounds(49, 121, 52, 25);
+		contentPane.add(lblDate);
+		
+		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				check expense
+//				checks plans and hostel date
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(146, 160, 122, 33);
+		btnNewButton.setBounds(138, 206, 117, 33);
 		contentPane.add(btnNewButton);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(204, 121, 127, 25);
+		contentPane.add(comboBox);
 	}
-
 }

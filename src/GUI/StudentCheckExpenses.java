@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class StudentC extends JFrame {
+public class StudentCheckExpenses extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -24,7 +24,7 @@ public class StudentC extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentC frame = new StudentC();
+					StudentCheckExpenses frame = new Student();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class StudentC extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StudentC() {
+	public StudentCheckExpenses() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,24 +45,24 @@ public class StudentC extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel id = new JLabel("ID No");
-		id.setBounds(79, 73, 52, 25);
-		id.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(id);
+		JLabel lblNewLabel = new JLabel("ID No");
+		lblNewLabel.setBounds(66, 63, 52, 25);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(246, 73, 119, 25);
+		textField.setBounds(215, 63, 122, 25);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Status");
+		JButton btnNewButton = new JButton("Expenses");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				check status
+//				check expense
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(161, 166, 111, 33);
+		btnNewButton.setBounds(146, 160, 122, 33);
 		contentPane.add(btnNewButton);
 	}
 

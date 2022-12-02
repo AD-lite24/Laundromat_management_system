@@ -45,7 +45,7 @@ public class AdminFunctions extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JRadioButton button1 = new JRadioButton("AC");
+		JRadioButton button1 = new JRadioButton("Print Details of all Students");
 		buttonGroup.add(button1);
 		button1.setBounds(51, 24, 179, 33);
 		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -57,25 +57,25 @@ public class AdminFunctions extends JFrame {
 		button2.setBounds(51, 75, 179, 33);
 		contentPane.add(button2);
 		
-		JRadioButton button3 = new JRadioButton("U");
+		JRadioButton button3 = new JRadioButton("Update Laundry Status");
 		buttonGroup.add(button3);
 		button3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button3.setBounds(51, 132, 179, 33);
 		contentPane.add(button3);
 		
-		JRadioButton button4 = new JRadioButton("SA");
+		JRadioButton button4 = new JRadioButton("Schedule Delivery Time");
 		buttonGroup.add(button4);
 		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button4.setBounds(51, 191, 179, 33);
 		contentPane.add(button4);
 		
-		JRadioButton button5 = new JRadioButton("RA");
+		JRadioButton button5 = new JRadioButton("Total Revenue");
 		buttonGroup.add(button5);
 		button5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button5.setBounds(51, 248, 179, 33);
 		contentPane.add(button5);
 		
-		JRadioButton button6 = new JRadioButton("L2");
+		JRadioButton button6 = new JRadioButton("Log Out");
 		buttonGroup.add(button6);
 		button6.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button6.setBounds(51, 308, 179, 33);
@@ -85,7 +85,7 @@ public class AdminFunctions extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(button1.isSelected()) {
-					AdminAC ac = new AdminAC();
+					AdminPrintAllDetails ac = new AdminPrintAllDetails();
 					ac.setVisible(true);
 					dispose();
 				}
@@ -96,19 +96,19 @@ public class AdminFunctions extends JFrame {
 				}
 				
 				else if(button3.isSelected()){
-					AdminU u = new AdminU();
+					AdminUpdateStatus u = new AdminUpdateStatus();
 					u.setVisible(true);
 					dispose();
 				}
 				
 				else if(button4.isSelected()){
-					AdminSA sa = new AdminSA();
+					AdminScheduleHostel sa = new AdminScheduleHostel();
 					sa.setVisible(true);
 					dispose();
 				}
 				
 				else if(button5.isSelected()){
-					AdminRA ra = new AdminRA();
+					AdminTotalRevenue ra = new AdminTotalRevenue();
 					ra.setVisible(true);
 					dispose();
 				}
