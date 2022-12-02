@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.EventQueue;
+import java.util.HashMap;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -64,11 +65,23 @@ public class Admin extends JFrame {
 		lblPassword.setBounds(47, 126, 108, 25);
 		contentPane.add(lblPassword);
 		
+		HashMap<Integer, String> adminUserName = new HashMap<Integer, String>();
+		adminUserName.put(1, "D");
+		adminUserName.put(2, "De");
+		adminUserName.put(3, "Dev");
+		adminUserName.put(4, "Deva");
+		adminUserName.put(5, "Devan");
+		adminUserName.put(6, "Devank");
+		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				boolean a=true;
+				String username = userName.getText();
+				String password = pass.getText();
+				
+				a = adminUserName.containsValue(username);
 				
 				if(a) {
 					AdminFunctions af = new AdminFunctions();

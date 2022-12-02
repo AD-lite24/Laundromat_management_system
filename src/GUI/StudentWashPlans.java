@@ -12,11 +12,12 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class StudentWashPlans extends JFrame {
 
 	private JPanel contentPane;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -47,55 +48,30 @@ public class StudentWashPlans extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(41, 41, 87, 25);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(41, 102, 87, 25);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("New label");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(41, 164, 87, 25);
-		contentPane.add(lblNewLabel_1_1);
-		
-		JRadioButton plan1 = new JRadioButton("Plan 1");
-		buttonGroup.add(plan1);
-		plan1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		plan1.setBounds(213, 41, 138, 21);
-		contentPane.add(plan1);
-		
-		JRadioButton plan2 = new JRadioButton("Plan 2");
-		buttonGroup.add(plan2);
-		plan2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		plan2.setBounds(213, 102, 138, 21);
-		contentPane.add(plan2);
-		
-		JRadioButton plan3 = new JRadioButton("Plan 3");
-		buttonGroup.add(plan3);
-		plan3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		plan3.setBounds(213, 164, 138, 21);
-		contentPane.add(plan3);
+		JComboBox WashPlans = new JComboBox();
+		WashPlans.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		WashPlans.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
+		WashPlans.setBounds(134, 97, 147, 37);
+		contentPane.add(WashPlans);
 		
 		JButton btnNewButton = new JButton("Confirm");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(plan1.isSelected()) {
-//					methods/code
-				}
-				else if(plan2.isSelected()) {
-//					method/code
-				}
-				else if(plan3.isSelected()) {
-//					method/code
-				}
+				
+				String plan = WashPlans.getSelectedItem().toString();
+				
+//				plan no stored in plan
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(145, 216, 103, 37);
+		btnNewButton.setBounds(155, 216, 103, 37);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("Required Wash Plan");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(118, 21, 184, 37);
+		contentPane.add(lblNewLabel);
+		
+		
 	}
 }

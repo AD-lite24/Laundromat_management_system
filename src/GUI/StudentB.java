@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 public class StudentB extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField idField;
 
 	/**
 	 * Launch the application.
@@ -50,15 +50,17 @@ public class StudentB extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(215, 63, 122, 25);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		idField = new JTextField();
+		idField.setBounds(215, 63, 122, 25);
+		contentPane.add(idField);
+		idField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Expenses");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				check expense
+				String id = idField.getText();
+//				id stored in id
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

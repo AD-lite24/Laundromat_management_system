@@ -1,17 +1,19 @@
-package GUI;
+package Main;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
-public class AdminAC extends JFrame {
+import GUI.MainWindow;
+
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class LaundromatHome extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +24,7 @@ public class AdminAC extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdminAC frame = new AdminAC();
+					LaundromatHome frame = new LaundromatHome();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +36,7 @@ public class AdminAC extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdminAC() {
+	public LaundromatHome() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -43,14 +45,19 @@ public class AdminAC extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("AC");
-		lblNewLabel.setBounds(211, 10, 24, 25);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Student1", "Student2", "Student3"}));
-		comboBox.setBounds(102, 92, 163, 21);
-		contentPane.add(comboBox);
+		JButton btnNewButton = new JButton("Start");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+				dispose();
+				
+//				main window code here
+			}
+		});
+		btnNewButton.setBounds(140, 101, 149, 52);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(btnNewButton);
 	}
+
 }

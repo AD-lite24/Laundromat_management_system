@@ -16,9 +16,9 @@ import java.awt.event.ActionEvent;
 public class StudentS extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField id;
-	private JTextField name;
-	private JTextField phone;
+	private JTextField idField;
+	private JTextField nameField;
+	private JTextField phoneField;
 	private JLabel message;
 
 	/**
@@ -69,27 +69,27 @@ public class StudentS extends JFrame {
 		message.setBounds(413, 271, 105, 29);
 		contentPane.add(message);
 		
-		id = new JTextField();
-		id.setBounds(209, 56, 203, 26);
-		contentPane.add(id);
-		id.setColumns(10);
+		idField = new JTextField();
+		idField.setBounds(209, 56, 203, 26);
+		contentPane.add(idField);
+		idField.setColumns(10);
 		
-		name = new JTextField();
-		name.setColumns(10);
-		name.setBounds(209, 118, 203, 26);
-		contentPane.add(name);
+		nameField = new JTextField();
+		nameField.setColumns(10);
+		nameField.setBounds(209, 118, 203, 26);
+		contentPane.add(nameField);
 		
-		phone = new JTextField();
-		phone.setColumns(10);
-		phone.setBounds(209, 182, 203, 26);
-		contentPane.add(phone);
+		phoneField = new JTextField();
+		phoneField.setColumns(10);
+		phoneField.setBounds(209, 182, 203, 26);
+		contentPane.add(phoneField);
 		
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Sname = name.getText();
-				String Sid = id.getText();
-				String Sphone = phone.getText();
+				String Sname = nameField.getText();
+				String Sid = idField.getText();
+				String Sphone = phoneField.getText();
 				String someId="something";
 				
 				

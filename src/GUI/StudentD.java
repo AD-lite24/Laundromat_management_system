@@ -12,11 +12,12 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class StudentD extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField id;
+	private JTextField idField;
 
 	/**
 	 * Launch the application.
@@ -51,28 +52,35 @@ public class StudentD extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 		
-		id = new JTextField();
-		id.setBounds(204, 50, 127, 25);
-		contentPane.add(id);
-		id.setColumns(10);
+		idField = new JTextField();
+		idField.setBounds(204, 50, 127, 25);
+		contentPane.add(idField);
+		idField.setColumns(10);
 		
 		JLabel lblDate = new JLabel("Date");
 		lblDate.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblDate.setBounds(49, 121, 52, 25);
 		contentPane.add(lblDate);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
+		comboBox.setBounds(204, 121, 127, 25);
+		contentPane.add(comboBox);
+		
 		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				checks plans and hostel date
+				String id = idField.getText();
+				String day = comboBox.getSelectedItem().toString();
+//				day id stored
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton.setBounds(138, 206, 117, 33);
 		contentPane.add(btnNewButton);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(204, 121, 127, 25);
-		contentPane.add(comboBox);
+		
 	}
 }

@@ -9,6 +9,10 @@ import javax.swing.JRadioButton;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Student extends JFrame {
 
@@ -43,39 +47,54 @@ public class Student extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("S");
-		buttonGroup.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setBounds(78, 6, 37, 33);
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("D");
-		buttonGroup.add(rdbtnNewRadioButton_1);
-		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_1.setBounds(78, 55, 52, 33);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("C");
-		buttonGroup.add(rdbtnNewRadioButton_2);
-		rdbtnNewRadioButton_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_2.setBounds(78, 104, 37, 33);
-		contentPane.add(rdbtnNewRadioButton_2);
-		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("B");
-		buttonGroup.add(rdbtnNewRadioButton_3);
-		rdbtnNewRadioButton_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_3.setBounds(78, 158, 37, 33);
-		contentPane.add(rdbtnNewRadioButton_3);
-		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("R");
-		buttonGroup.add(rdbtnNewRadioButton_4);
-		rdbtnNewRadioButton_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_4.setBounds(78, 208, 52, 33);
-		contentPane.add(rdbtnNewRadioButton_4);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"S", "D", "C", "B", "R"}));
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setBounds(58, 94, 137, 31);
+		contentPane.add(comboBox);
 		
 		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String choice = comboBox.getSelectedItem().toString();
+				
+//				choice is what selected by user
+				switch(choice){
+					
+				case "S" :
+					StudentS s = new StudentS();
+					s.setVisible(true);
+					dispose();
+					break;
+				case "D" :
+					StudentD d = new StudentD();
+					d.setVisible(true);
+					dispose();
+					break;
+				case "C" :
+					StudentC c = new StudentC();
+					c.setVisible(true);
+					dispose();
+					break;
+				case "B" :
+					StudentB b = new StudentB();
+					b.setVisible(true);
+					dispose();
+					break;
+				case "R" :
+					StudentR r = new StudentR();
+					r.setVisible(true);
+					dispose();
+					break;
+				}
+//				wc.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(222, 114, 115, 33);
+		btnNewButton.setBounds(264, 94, 137, 31);
 		contentPane.add(btnNewButton);
+		
+		
 	}
 }

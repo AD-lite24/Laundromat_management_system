@@ -8,6 +8,8 @@ public class Main {
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
 		//to be implemented alongside gui
 		
+//		LaundromatHome, new homepage
+		
 		LaundroSystem laundro = new LaundroSystem();
 		Plan plan = new Plan(0, 0, null, 0);
 		LaundroSystem.addStudent(new Student(0, "A", 0, plan, null));
