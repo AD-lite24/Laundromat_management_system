@@ -61,6 +61,10 @@ public class AdminWindow extends JFrame {
 		userName.setBounds(204, 53, 151, 24);
 		contentPane.add(userName);
 		userName.setColumns(10);
+
+		pass = new JPasswordField();
+		pass.setBounds(204, 130, 151, 25);
+		contentPane.add(pass);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -70,8 +74,9 @@ public class AdminWindow extends JFrame {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				boolean loginSuccess = LaundroSystem.admin.login(userName.getText(), lblPassword.getText());
+				System.out.println(userName.getText());
+				System.out.println(String.valueOf(pass.getPassword()));
+				boolean loginSuccess = LaundroSystem.admin.login(userName.getText(), String.valueOf(pass.getPassword()));
 				if(loginSuccess) {
 					AdminFunctions af = new AdminFunctions();
 					af.setVisible(true);
@@ -89,9 +94,7 @@ public class AdminWindow extends JFrame {
 		btnNewButton.setBounds(143, 220, 117, 33);
 		contentPane.add(btnNewButton);
 		
-		pass = new JPasswordField();
-		pass.setBounds(204, 130, 151, 25);
-		contentPane.add(pass);
+
 		
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(152, 173, 108, 25);
