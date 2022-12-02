@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Admin extends JFrame {
+public class AdminWindow extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userName;
@@ -27,7 +27,7 @@ public class Admin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin frame = new Admin();
+					AdminWindow frame = new AdminWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class Admin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Admin() {
+	public AdminWindow() {
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

@@ -64,7 +64,7 @@ public class MainWindow extends JFrame {
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Admin a = new Admin();
+				AdminWindow a = new AdminWindow();
 				a.setVisible(true);
 				dispose();
 			}
