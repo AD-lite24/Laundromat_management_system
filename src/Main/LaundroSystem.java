@@ -10,7 +10,7 @@ public class LaundroSystem implements Serializable{
 
 	public static ArrayList<Hostel> hostelList = new ArrayList<>();
 	public static ArrayList<Plan> planList = new ArrayList<>();
-	public Admin admin;
+	public static Admin admin;
 	public LaundroSystem(){
 		admin = new Admin();
 		//Hostels
