@@ -112,6 +112,7 @@ public class Student {
 		this.clothes.setWeight(weight);
 		clothes.setAlreadyDropped(true);
 		clothes.setStatus("Waiting to be picked up"); //Initial status
+		this.numOfWashes--;
 
 	}
 
