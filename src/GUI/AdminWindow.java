@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -68,9 +71,8 @@ public class AdminWindow extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				boolean a=true;
-				
-				if(a) {
+				boolean loginSuccess = LaundroSystem.admin.login(userName.getText(), lblPassword.getText());
+				if(loginSuccess) {
 					AdminFunctions af = new AdminFunctions();
 					af.setVisible(true);
 					dispose();

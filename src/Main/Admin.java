@@ -7,7 +7,7 @@ import hostel.Hostel;
 public class Admin {
 	
 	static private final String userName = "admin";
-	static private final int pin = 1234;
+	static private final String pin = "1234";
 	
 	public String showStudentStatus(int id, int date) {
 		return LaundroSystem.getDataBase().get(id).clothes.getStatus();
@@ -20,12 +20,14 @@ public class Admin {
 	}
 	
 	//Login to admin, needs to work with gui 
-	public void login(String userName, int pwd) {
-		if (userName.equals(Admin.userName) && pwd == Admin.pin) {
+	public boolean login(String userName, String pwd) {
+		if (userName.equals(Admin.userName) && pwd.equals(Admin.pin)) {
 			System.out.println("login successful");
+			return true;
 		}
 		else {
 			System.out.println("Incorrect credentials");
+			return false;
 		}
 	}
 	
