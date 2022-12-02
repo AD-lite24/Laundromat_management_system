@@ -74,8 +74,7 @@ public class AdminWindow extends JFrame {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(userName.getText());
-				System.out.println(String.valueOf(pass.getPassword()));
+
 				boolean loginSuccess = LaundroSystem.admin.login(userName.getText(), String.valueOf(pass.getPassword()));
 				if(loginSuccess) {
 					AdminFunctions af = new AdminFunctions();
