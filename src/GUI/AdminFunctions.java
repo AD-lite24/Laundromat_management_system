@@ -51,7 +51,7 @@ public class AdminFunctions extends JFrame {
 		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(button1);
 		
-		JRadioButton button2 = new JRadioButton("T");
+		JRadioButton button2 = new JRadioButton("Check Laundry Status of Student");
 		buttonGroup.add(button2);
 		button2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button2.setBounds(51, 75, 179, 33);
@@ -90,7 +90,7 @@ public class AdminFunctions extends JFrame {
 					dispose();
 				}
 				else if(button2.isSelected()){
-					AdminT t = new AdminT();
+					AdminCheckLaundryStatus t = new AdminCheckLaundryStatus();
 					t.setVisible(true);
 					dispose();
 				}
@@ -114,7 +114,7 @@ public class AdminFunctions extends JFrame {
 				}
 				
 				else if(button6.isSelected()){
-					AdminL2 l2 = new AdminL2();
+					AdminLogout l2 = new AdminLogout();
 					l2.setVisible(true);
 					dispose();
 				}
