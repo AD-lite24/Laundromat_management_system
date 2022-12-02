@@ -10,7 +10,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
 
-public class Student extends JFrame {
+public class StudentWindow extends JFrame {
 
 	private JPanel contentPane;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -22,7 +22,7 @@ public class Student extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Student frame = new Student();
+					StudentWindow frame = new StudentWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class Student extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Student() {
+	public StudentWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

@@ -52,7 +52,7 @@ public class MainWindow extends JFrame {
 		JButton btnNewButton = new JButton("Student");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Student s = new Student();
+				StudentWindow s = new StudentWindow();
 				s.setVisible(true);
 				dispose();
 			}
