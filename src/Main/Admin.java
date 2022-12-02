@@ -24,6 +24,9 @@ public class Admin {
 		if (userName.equals(Admin.userName) && pwd == Admin.pin) {
 			System.out.println("login successful");
 		}
+		else {
+			System.out.println("Incorrect credentials");
+		}
 	}
 	
 	//Logout of admin, needs to work with gui
