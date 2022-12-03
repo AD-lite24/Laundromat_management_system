@@ -62,7 +62,7 @@ public class AdminFunctions extends JFrame {
 		
 		JRadioButton button4 = new JRadioButton("Schedule Delivery Time");
 		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button4.setBounds(24, 136, 382, 21);
+		button4.setBounds(24, 136, 321, 21);
 		contentPane.add(button4);
 		
 		JRadioButton button5 = new JRadioButton("Total Revenue");
