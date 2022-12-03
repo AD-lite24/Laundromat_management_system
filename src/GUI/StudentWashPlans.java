@@ -56,7 +56,7 @@ public class StudentWashPlans extends JFrame {
 		
 		JComboBox<String> comboBox = new JComboBox<>();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Plan 1", "Plan 2", "Plan 3"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
 		comboBox.setBounds(219, 57, 139, 25);
 		contentPane.add(comboBox);
 		
