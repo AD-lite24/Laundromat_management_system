@@ -67,8 +67,8 @@ public class StudentCheckStatus extends JFrame {
 				try{
 				LaundroSystem.getStudentFromDataBase(id).getClothesStatus();
 				}
-				catch(ClothesNotDroppedException e){
-					e.getMessage();
+				catch(ClothesException er){
+					er.getMessage();
 				}				
 			}
 		});

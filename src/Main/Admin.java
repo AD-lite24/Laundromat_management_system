@@ -1,6 +1,7 @@
 package Main;
 
 
+import Exceptions.ClothesNotDroppedException;
 import hostel.Hostel;
 
 

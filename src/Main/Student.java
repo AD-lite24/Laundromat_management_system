@@ -1,24 +1,8 @@
 package Main;
 import hostel.Hostel;
 import plans.Plan;
+import Exceptions.*;
 
-class ClothesAlreadyDroppedException extends Exception{
-	public ClothesAlreadyDroppedException(String message){
-		super(message);
-	}
-}
-
-class ClothesNotDroppedException extends Exception{
-	public ClothesNotDroppedException(String message){
-		super(message);
-	}
-}
-
-class WeightLimitExceededException extends Exception{
-	public WeightLimitExceededException(String message){
-		super(message);
-	}
-}
 
 class UserEntryError extends Exception {
 	public UserEntryError(String message){
@@ -106,14 +90,22 @@ public class Student {
 		}
 		if (weight > 2){
 			//Handle weight limit exceeded exception separately by including charges
-			throw new WeightLimitExceededException("Weight above 2kg");
+			throw new WeightLimitExceededException("You have exceeded weight limit");
 		}
 		this.clothes.setQuantiy(quantity);
 		this.clothes.setWeight(weight);
 		clothes.setAlreadyDropped(true);
 		clothes.setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
+	}
 
+	public void dropClothesWithExtraCharges(int quantity, float weight){
+		this.clothes.setQuantiy(quantity);
+		this.clothes.setWeight(weight);
+		clothes.setAlreadyDropped(true);
+		clothes.setStatus("Waiting to be picked up"); //Initial status
+		this.numOfWashes--;
+		this.moneyCharged += (weight - 2)*25;
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
