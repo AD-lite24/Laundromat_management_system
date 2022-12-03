@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class AdminSA extends JFrame {
+public class AdminPrintAllDetails extends JFrame {
 
 	private JPanel contentPane;
 
@@ -19,7 +19,7 @@ public class AdminSA extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdminSA frame = new AdminSA();
+					AdminPrintAllDetails frame = new AdminPrintAllDetails();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class AdminSA extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdminSA() {
+	public AdminPrintAllDetails() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -39,9 +39,9 @@ public class AdminSA extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JLabel lblSa = new JLabel("SA");
-		lblSa.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblSa);
+		JLabel lblNewLabel = new JLabel("AC");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblNewLabel);
 	}
 
 }

@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class StudentR extends JFrame {
+public class StudentReceiveLaundry extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,7 +25,7 @@ public class StudentR extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentR frame = new StudentR();
+					StudentReceiveLaundry frame = new StudentReceiveLaundry();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class StudentR extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StudentR() {
+	public StudentReceiveLaundry() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

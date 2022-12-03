@@ -13,7 +13,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class StudentS extends JFrame {
+public class StudentLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField id;
@@ -28,7 +28,7 @@ public class StudentS extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentS frame = new StudentS();
+					StudentLogin frame = new StudentLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class StudentS extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public StudentS() {
+	public StudentLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 394);
 		contentPane = new JPanel();

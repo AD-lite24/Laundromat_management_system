@@ -43,31 +43,31 @@ public class StudentWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("S");
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Login");
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setBounds(78, 6, 37, 33);
 		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(rdbtnNewRadioButton);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("D");
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Drop Laundry");
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnNewRadioButton_1.setBounds(78, 55, 52, 33);
 		contentPane.add(rdbtnNewRadioButton_1);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("C");
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Check Status");
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnNewRadioButton_2.setBounds(78, 104, 37, 33);
 		contentPane.add(rdbtnNewRadioButton_2);
 		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("B");
+		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Check Expenses");
 		buttonGroup.add(rdbtnNewRadioButton_3);
 		rdbtnNewRadioButton_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnNewRadioButton_3.setBounds(78, 158, 37, 33);
 		contentPane.add(rdbtnNewRadioButton_3);
 		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("R");
+		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Received Laundry");
 		buttonGroup.add(rdbtnNewRadioButton_4);
 		rdbtnNewRadioButton_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		rdbtnNewRadioButton_4.setBounds(78, 208, 52, 33);
