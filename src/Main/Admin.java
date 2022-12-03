@@ -17,8 +17,9 @@ public class Admin {
 	public void updateStatus(String id, int date, String status) {
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes().setStatus(status);
-		
+		LaundroSystem.fillDatabase();	
 	}
+	
 	
 	//Login to admin, needs to work with gui 
 	public boolean login(String userName, String pwd) {
@@ -67,19 +68,12 @@ public class Admin {
 	public void scheduleDeliveryTime(Hostel hostel, int deliveryTimeHours, int deliveryTimeMinutes, String day){
 		hostel.setDeliveryDay(day);
 		hostel.setDeliveryTime(deliveryTimeHours, deliveryTimeMinutes);
+		LaundroSystem.fillHostelDetails(LaundroSystem.hostelList);
 	}
 
 	public void scheduleDropDay(String day, Hostel hostel){
 		hostel.setDropDay(day);
+		LaundroSystem.fillHostelDetails(LaundroSystem.hostelList);
 	}
-
-
-
-
-
-
-	
-	
-	
 
 }

@@ -10,6 +10,8 @@ public class Main {
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
 		//to be implemented alongside gui
 		LaundroSystem laundro = new LaundroSystem();
+		LaundroSystem.reloadStudentData();
+		LaundroSystem.reloadHostel();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

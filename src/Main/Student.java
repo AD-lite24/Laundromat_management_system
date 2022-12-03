@@ -28,10 +28,10 @@ class DroppedClothes{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getQuantiy() {
+	public int getQuantity() {
 		return quantiy;
 	}
-	public void setQuantiy(int quantiy) {
+	public void setQuantity(int quantiy) {
 		this.quantiy = quantiy;
 	}
 	public float getWeight() {
@@ -82,6 +82,10 @@ public class Student {
 		this.hostel = hostel;
 	}
 
+	public void setClothes(DroppedClothes clothes){
+		this.clothes=clothes;
+	}
+
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
 	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
 		
@@ -93,27 +97,30 @@ public class Student {
 			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("You have exceeded weight limit");
 		}
-		this.clothes.setQuantiy(quantity);
+		this.clothes.setQuantity(quantity);
 		this.clothes.setWeight(weight);
 		clothes.setAlreadyDropped(true);
 		clothes.setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
+		LaundroSystem.fillDatabase();
 	}
 
 	public void dropClothesWithExtraCharges(int quantity, float weight){
-		this.clothes.setQuantiy(quantity);
+		this.clothes.setQuantity(quantity);
 		this.clothes.setWeight(weight);
 		clothes.setAlreadyDropped(true);
 		clothes.setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
+		LaundroSystem.fillDatabase();
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
 		this.moneyCharged += numOfWashes*20;
 		this.numOfWashes += numOfWashes;
-
 		this.hostel.setHostelRevenue(numOfWashes*20);
+		LaundroSystem.fillDatabase();
+		LaundroSystem.fillHostelDetails(LaundroSystem.hostelList);
 	}
 
 	public void registerForLaundro() throws UserEntryError{
@@ -149,6 +156,7 @@ public class Student {
 		else{
 			System.out.println("Clothes not reached");
 		}
+		LaundroSystem.fillDatabase();
 	}
 
 	@Override
@@ -167,6 +175,14 @@ public class Student {
 
 	public String getPhoneNumber() {
 		return phoneNumber;
+	}
+
+	public float getMoneyCharged(){
+		return moneyCharged;
+	}
+
+	public int getNumOfWashes(){
+		return numOfWashes;
 	}
 
 	public DroppedClothes getClothes() {
