@@ -42,7 +42,7 @@ public class AdminScheduleHostel extends JFrame {
 	 */
 	public AdminScheduleHostel() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 555, 372);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -65,9 +65,9 @@ public class AdminScheduleHostel extends JFrame {
 		lblDay.setBounds(37, 116, 96, 25);
 		contentPane.add(lblDay);
 		
-		JLabel lblTime = new JLabel("Time");
+		JLabel lblTime = new JLabel("Hour");
 		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTime.setBounds(37, 168, 96, 25);
+		lblTime.setBounds(37, 168, 85, 25);
 		contentPane.add(lblTime);
 		
 		JComboBox hostelCombo = new JComboBox();
@@ -85,7 +85,7 @@ public class AdminScheduleHostel extends JFrame {
 		JComboBox timeCombo = new JComboBox();
 		timeCombo.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"}));
 		timeCombo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		timeCombo.setBounds(206, 174, 69, 25);
+		timeCombo.setBounds(128, 168, 69, 25);
 		contentPane.add(timeCombo);
 		
 		JButton btnNewButton = new JButton("Schedule");
@@ -98,8 +98,31 @@ public class AdminScheduleHostel extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(142, 222, 113, 31);
+		btnNewButton.setBounds(314, 263, 113, 31);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblMinute = new JLabel("Minute");
+		lblMinute.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblMinute.setBounds(240, 168, 79, 25);
+		contentPane.add(lblMinute);
+		
+		JComboBox timeCombo_1 = new JComboBox();
+		timeCombo_1.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"}));
+		timeCombo_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		timeCombo_1.setBounds(346, 168, 69, 25);
+		contentPane.add(timeCombo_1);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminFunctions af = new AdminFunctions();
+				af.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(94, 260, 103, 37);
+		contentPane.add(btnNewButton_1);
 		
 		
 

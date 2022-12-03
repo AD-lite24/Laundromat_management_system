@@ -22,6 +22,7 @@ public class AdminWindow extends JFrame {
 	private JTextField userName;
 	private JPasswordField pass;
 	private JLabel lblNewLabel_1;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -90,7 +91,7 @@ public class AdminWindow extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(143, 220, 117, 33);
+		btnNewButton.setBounds(246, 220, 103, 37);
 		contentPane.add(btnNewButton);
 		
 
@@ -98,5 +99,17 @@ public class AdminWindow extends JFrame {
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(152, 173, 108, 25);
 		contentPane.add(lblNewLabel_1);
+		
+		btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminFunctions af = new AdminFunctions();
+				af.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(76, 220, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 }

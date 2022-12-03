@@ -45,7 +45,7 @@ public class StudentWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JRadioButton button1 = new JRadioButton("Login");
+		JRadioButton button1 = new JRadioButton("Register");
 		buttonGroup.add(button1);
 		button1.setBounds(48, 6, 214, 33);
 		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -106,7 +106,19 @@ public class StudentWindow extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(311, 114, 115, 33);
+		btnNewButton.setBounds(298, 88, 116, 37);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(311, 168, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 }

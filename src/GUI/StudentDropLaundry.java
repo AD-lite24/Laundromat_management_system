@@ -92,8 +92,20 @@ public class StudentDropLaundry extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(138, 206, 117, 33);
+		btnNewButton.setBounds(228, 206, 103, 37);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentWindow sw = new StudentWindow();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(59, 206, 103, 37);
+		contentPane.add(btnNewButton_1);
 
 	}
 }
