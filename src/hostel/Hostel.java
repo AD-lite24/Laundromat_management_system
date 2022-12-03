@@ -11,17 +11,22 @@ public class Hostel {
 	private String deliveryDay;
 	private float revenue = 0;
 	
-	public Hostel(String name) {
+	public Hostel(String name, String dropDay, LocalTime deliveryTime, String deliveryDay) {
 		this.name = name;
+		this.dropDay = dropDay;
+		this.deliveryTime = deliveryTime;
+		this.deliveryDay = deliveryDay;
 	}
+
+	
 	
 	public void setDropDay(String day) {
 		this.dropDay = day;
 	}
 	
 	
-	public void setDeliveryTime(int deliveryTimeHours, int deliveryTImeMinutes) {
-		this.deliveryTime = LocalTime.of(deliveryTimeHours, deliveryTImeMinutes);
+	public void setDeliveryTime(int deliveryTimeHours, int deliveryTimeMinutes) {
+		this.deliveryTime = LocalTime.of(deliveryTimeHours, deliveryTimeMinutes);
 	}
 	
 	

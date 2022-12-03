@@ -1,5 +1,6 @@
 package Main;
 import java.io.Serializable;
+import java.time.LocalTime;
 import java.util.*;
 import Exceptions.*;
 import hostel.Hostel;
@@ -14,19 +15,19 @@ public class LaundroSystem implements Serializable{
 	public LaundroSystem(){
 		admin = new Admin();
 		//Hostels
-		Hostel krishna = new Hostel("Krishna");
+		Hostel krishna = new Hostel("Krishna", "Monday", LocalTime.of(0, 0), "Wednesday");
 		hostelList.add(krishna);
-		Hostel vyas = new Hostel("Vyas");
+		Hostel vyas = new Hostel("Vyas", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(vyas);
-		Hostel meera = new Hostel("Meera");
+		Hostel meera = new Hostel("Meera", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(meera);
-		Hostel gandhi = new Hostel("Gandhi");
+		Hostel gandhi = new Hostel("Gandhi", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(gandhi);
-		Hostel ram = new Hostel("Ram");
+		Hostel ram = new Hostel("Ram", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(ram);
-		Hostel budh = new Hostel("Budh");
+		Hostel budh = new Hostel("Budh", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(budh);
-		Hostel shankar = new Hostel("Shankar");
+		Hostel shankar = new Hostel("Shankar", "Tuesday", LocalTime.of(0, 0), "Thursday");
 		hostelList.add(shankar);
 
 
