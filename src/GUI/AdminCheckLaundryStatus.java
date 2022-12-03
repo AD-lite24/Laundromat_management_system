@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Exceptions.ClothesNotDroppedException;
+import Main.LaundroSystem;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -62,8 +66,8 @@ public class AdminCheckLaundryStatus extends JFrame {
 		lblDate.setBounds(50, 116, 52, 25);
 		contentPane.add(lblDate);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
+		JComboBox<String> comboBox = new JComboBox<>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setBounds(226, 116, 136, 25);
 		contentPane.add(comboBox);
@@ -73,6 +77,12 @@ public class AdminCheckLaundryStatus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String id = idField.getText();
 				String day = comboBox.getSelectedItem().toString();
+
+				try {
+					System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus());
+				} catch (ClothesNotDroppedException e1) {
+					System.out.println(e1.getMessage());
+				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

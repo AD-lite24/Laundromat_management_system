@@ -53,7 +53,6 @@ public class LaundroSystem implements Serializable{
 	}
 	
 	public static Map<String, Student> getDataBase() {
-		
 		return dataBase; 
 	}
 	
