@@ -5,6 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+import Main.Student;
+import plans.Plan;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JRadioButton;
@@ -49,9 +54,9 @@ public class StudentWashPlans extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<>();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Plan 1", "Plan 2", "Plan 3"}));
 		comboBox.setBounds(219, 57, 139, 25);
 		contentPane.add(comboBox);
 		
@@ -59,8 +64,14 @@ public class StudentWashPlans extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String plan = comboBox.getSelectedItem().toString();
+				String planString = comboBox.getSelectedItem().toString();
 				
+				int planIndex = Integer.parseInt(planString.split(" ")[2]);
+				switch(planIndex){
+					case 1:
+						Plan plan = LaundroSystem.planList.get(0);
+						LaundroSystem.addStudent(new Student(planString, planString, planIndex, plan, null));
+				}
 				
 			}
 		});
