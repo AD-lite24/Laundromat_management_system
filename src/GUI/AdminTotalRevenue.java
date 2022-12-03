@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Main.LaundroSystem;
+import hostel.Hostel;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -59,8 +60,8 @@ public class AdminTotalRevenue extends JFrame {
 		lblHostel.setBounds(55, 93, 70, 25);
 		contentPane.add(lblHostel);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Hostel 1", "Hostel 2", "Hostel 3", "Hostel 4", "Hostel 5"}));
+		JComboBox<String> comboBox = new JComboBox<>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Krishna", "Gandhi", "Vyas", "Meera", "Shankar", "Budh"}));
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setBounds(195, 93, 149, 25);
 		contentPane.add(comboBox);
@@ -80,8 +81,15 @@ public class AdminTotalRevenue extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String hostel = comboBox.getSelectedItem().toString();
+				float revenue = 0;
+				for (Hostel hostelObj : LaundroSystem.hostelList){
+					if (hostelObj.getName().equals(hostel)){
+						revenue = hostelObj.getRevenue();
+						break;
+					}
+				}
 				
-				revenueField.setText("revenue");
+				revenueField.setText(String.valueOf(revenue));
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
