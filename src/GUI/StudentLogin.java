@@ -87,7 +87,7 @@ public class StudentLogin extends JFrame {
 		phone.setBounds(209, 238, 203, 26);
 		contentPane.add(phone);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
 		comboBox.setBounds(209, 301, 203, 25);
@@ -105,16 +105,15 @@ public class StudentLogin extends JFrame {
 				String Sname = name.getText();
 				String Sid = id.getText();
 				String Sphone = phone.getText();
-				String someId = "smomid";
 				
-				String day = comboBox.getSelectedItem().toString();
+				String planString = comboBox.getSelectedItem().toString();
 				String hostel = hostelBox.getSelectedItem().toString();
-				
+				int planIndex = Integer.parseInt(planString.split(" ")[2]);
 				
 				try {
 					
-					if(Sid==someId) {
-//						show already registered window
+					if() {
+						
 					}
 					
 					else {
