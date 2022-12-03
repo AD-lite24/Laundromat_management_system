@@ -35,7 +35,7 @@ public class LaundroSystem implements Serializable{
 		
 	}
 	
-	private static Map<Integer, Student> dataBase = new HashMap<>();
+	private static Map<String, Student> dataBase = new HashMap<>();
 	
 	public static void addStudent(Student student) {
 
@@ -43,8 +43,12 @@ public class LaundroSystem implements Serializable{
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
 
 	}
+
+	public static Student getStudentFromDataBase(String id){
+		return getDataBase().get(id);
+	}
 	
-	public static Map<Integer, Student> getDataBase() {
+	public static Map<String, Student> getDataBase() {
 		
 		return dataBase; 
 	}
