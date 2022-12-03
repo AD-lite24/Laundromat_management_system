@@ -10,13 +10,13 @@ public class Admin {
 	static private final String userName = "admin";
 	static private final String pin = "1234";
 	
-	public String showStudentStatus(int id, int date) {
-		return LaundroSystem.getDataBase().get(id).clothes.getStatus();
+	public String showStudentStatus(String id, int date) {
+		return LaundroSystem.getDataBase().get(id).getClothes().getStatus();
 	}
 	
-	public void updateStatus(int id, int date, String status) {
+	public void updateStatus(String id, int date, String status) {
 		Student student = LaundroSystem.getDataBase().get(id);
-		student.clothes.setStatus(status);
+		student.getClothes().setStatus(status);
 		
 	}
 	
@@ -47,7 +47,10 @@ public class Admin {
 
 	//iterate through the database HashMap
 	public void printDetailsOfAllStudents(){
-		System.out.println(LaundroSystem.getDataBase());
+		System.out.println("Printing details of all students....");
+		for (Student student : LaundroSystem.getDataBase().values()){
+			System.out.println("Name: " + student.getName() + " ID: " + student.getId() + " Phone No: " + student.getPhoneNumber());
+		}
 	}
 
 	//Return laundry Status of each student, don't forget to make an array for possible states 

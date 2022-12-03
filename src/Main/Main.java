@@ -3,7 +3,6 @@ package Main;
 import java.io.*;
 
 import GUI.MainWindow;
-import plans.Plan;
 import java.awt.EventQueue;
 
 public class Main {

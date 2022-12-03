@@ -9,6 +9,8 @@ import javax.swing.JRadioButton;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StudentWindow extends JFrame {
 
@@ -43,39 +45,80 @@ public class StudentWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Login");
-		buttonGroup.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setBounds(78, 6, 37, 33);
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(rdbtnNewRadioButton);
+		JRadioButton button1 = new JRadioButton("Register");
+		buttonGroup.add(button1);
+		button1.setBounds(48, 6, 214, 33);
+		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(button1);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Drop Laundry");
-		buttonGroup.add(rdbtnNewRadioButton_1);
-		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_1.setBounds(78, 55, 52, 33);
-		contentPane.add(rdbtnNewRadioButton_1);
+		JRadioButton button2 = new JRadioButton("Drop Laundry");
+		buttonGroup.add(button2);
+		button2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		button2.setBounds(48, 55, 193, 33);
+		contentPane.add(button2);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Check Status");
-		buttonGroup.add(rdbtnNewRadioButton_2);
-		rdbtnNewRadioButton_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_2.setBounds(78, 104, 37, 33);
-		contentPane.add(rdbtnNewRadioButton_2);
+		JRadioButton button3 = new JRadioButton("Check Status");
+		buttonGroup.add(button3);
+		button3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		button3.setBounds(48, 104, 193, 33);
+		contentPane.add(button3);
 		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Check Expenses");
-		buttonGroup.add(rdbtnNewRadioButton_3);
-		rdbtnNewRadioButton_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_3.setBounds(78, 158, 37, 33);
-		contentPane.add(rdbtnNewRadioButton_3);
+		JRadioButton button4 = new JRadioButton("Check Expenses");
+		buttonGroup.add(button4);
+		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		button4.setBounds(48, 158, 193, 33);
+		contentPane.add(button4);
 		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Received Laundry");
-		buttonGroup.add(rdbtnNewRadioButton_4);
-		rdbtnNewRadioButton_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton_4.setBounds(78, 208, 52, 33);
-		contentPane.add(rdbtnNewRadioButton_4);
+		JRadioButton button5 = new JRadioButton("Received Laundry");
+		buttonGroup.add(button5);
+		button5.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		button5.setBounds(48, 208, 193, 33);
+		contentPane.add(button5);
 		
 		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (button1.isSelected()) {
+					StudentLogin sl = new StudentLogin();
+					sl.setVisible(true);
+					dispose();
+				}
+				else if(button2.isSelected()) {
+					StudentDropLaundry sdl = new StudentDropLaundry();
+					sdl.setVisible(true);
+					dispose();
+				}
+				else if(button3.isSelected()) {
+					StudentCheckStatus scs = new StudentCheckStatus();
+					scs.setVisible(true);
+					dispose();
+				}
+				else if(button4.isSelected()) {
+					StudentCheckExpenses sce = new StudentCheckExpenses();
+					sce.setVisible(true);
+					dispose();
+				}
+				else if(button5.isSelected()) {
+					StudentReceiveLaundry srl = new StudentReceiveLaundry();
+					srl.setVisible(true);
+					dispose();
+				}
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(222, 114, 115, 33);
+		btnNewButton.setBounds(298, 88, 116, 37);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(311, 168, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 }

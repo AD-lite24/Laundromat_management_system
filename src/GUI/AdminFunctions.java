@@ -5,17 +5,17 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
 
 public class AdminFunctions extends JFrame {
 
 	private JPanel contentPane;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -38,7 +38,7 @@ public class AdminFunctions extends JFrame {
 	 */
 	public AdminFunctions() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 590, 384);
+		setBounds(100, 100, 551, 327);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -46,39 +46,33 @@ public class AdminFunctions extends JFrame {
 		contentPane.setLayout(null);
 		
 		JRadioButton button1 = new JRadioButton("Print Details of all Students");
-		buttonGroup.add(button1);
-		button1.setBounds(51, 24, 179, 33);
 		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		button1.setBounds(24, 17, 382, 21);
 		contentPane.add(button1);
 		
 		JRadioButton button2 = new JRadioButton("Check Laundry Status of Student");
-		buttonGroup.add(button2);
 		button2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button2.setBounds(51, 75, 179, 33);
+		button2.setBounds(24, 56, 382, 21);
 		contentPane.add(button2);
 		
 		JRadioButton button3 = new JRadioButton("Update Laundry Status");
-		buttonGroup.add(button3);
 		button3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button3.setBounds(51, 132, 179, 33);
+		button3.setBounds(24, 95, 382, 21);
 		contentPane.add(button3);
 		
 		JRadioButton button4 = new JRadioButton("Schedule Delivery Time");
-		buttonGroup.add(button4);
 		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button4.setBounds(51, 191, 179, 33);
+		button4.setBounds(24, 136, 321, 21);
 		contentPane.add(button4);
 		
 		JRadioButton button5 = new JRadioButton("Total Revenue");
-		buttonGroup.add(button5);
 		button5.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button5.setBounds(51, 248, 179, 33);
+		button5.setBounds(24, 175, 382, 21);
 		contentPane.add(button5);
 		
 		JRadioButton button6 = new JRadioButton("Log Out");
-		buttonGroup.add(button6);
 		button6.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button6.setBounds(51, 308, 179, 33);
+		button6.setBounds(24, 216, 382, 27);
 		contentPane.add(button6);
 		
 		JButton btnNewButton = new JButton("Confirm");
@@ -114,15 +108,28 @@ public class AdminFunctions extends JFrame {
 				}
 				
 				else if(button6.isSelected()){
-					AdminLogout l2 = new AdminLogout();
-					l2.setVisible(true);
+					AdminWindow aw = new AdminWindow();
+					aw.setVisible(true);
 					dispose();
 				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(320, 132, 135, 43);
+		btnNewButton.setBounds(385, 122, 142, 33);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(400, 202, 103, 37);
+		contentPane.add(btnNewButton_1);
+		
+		
 	}
-
 }
