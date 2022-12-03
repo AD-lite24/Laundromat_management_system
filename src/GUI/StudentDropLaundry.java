@@ -89,6 +89,9 @@ public class StudentDropLaundry extends JFrame {
 				catch (ClothesAlreadyDroppedException e1){
 					System.out.println(e1.getMessage());
 				}
+				catch (ClothesDroppedOnWrongDayException e1){
+					System.out.println(e1.getMessage());
+				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

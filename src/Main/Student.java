@@ -1,6 +1,11 @@
 package Main;
 import hostel.Hostel;
 import plans.Plan;
+
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.spi.CalendarDataProvider;
+
 import Exceptions.*;
 
 
@@ -83,9 +88,11 @@ public class Student {
 	}
 
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
-	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
+	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
 		
-
+		if (!LocalDate.now().getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
+			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
+		}
 		if (clothes.getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}

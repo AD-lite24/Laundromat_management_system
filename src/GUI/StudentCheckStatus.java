@@ -66,7 +66,7 @@ public class StudentCheckStatus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String id = textField.getText();
 				try{
-				LaundroSystem.getStudentFromDataBase(id).getClothesStatus();
+				System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus());
 				}
 				catch(ClothesException er){
 					er.getMessage();
