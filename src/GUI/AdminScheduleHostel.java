@@ -83,16 +83,10 @@ public class AdminScheduleHostel extends JFrame {
 		contentPane.add(dayCombo);
 		
 		JComboBox timeCombo = new JComboBox();
-		timeCombo.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		timeCombo.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"}));
 		timeCombo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		timeCombo.setBounds(206, 174, 59, 25);
+		timeCombo.setBounds(206, 174, 69, 25);
 		contentPane.add(timeCombo);
-		
-		JComboBox apCombo = new JComboBox();
-		apCombo.setModel(new DefaultComboBoxModel(new String[] {"AM", "PM"}));
-		apCombo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		apCombo.setBounds(298, 174, 59, 25);
-		contentPane.add(apCombo);
 		
 		JButton btnNewButton = new JButton("Schedule");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -100,7 +94,7 @@ public class AdminScheduleHostel extends JFrame {
 				String hostel = hostelCombo.getSelectedItem().toString();
 				String day = dayCombo.getSelectedItem().toString();
 				String time = timeCombo.getSelectedItem().toString();
-				String ap = apCombo.getSelectedItem().toString();
+//				String ap = apCombo.getSelectedItem().toString();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
