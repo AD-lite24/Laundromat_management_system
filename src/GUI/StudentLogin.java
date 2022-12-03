@@ -111,8 +111,8 @@ public class StudentLogin extends JFrame {
 				int planIndex = Integer.parseInt(planString.split(" ")[2]);
 				
 				try {
-					
-					if() {
+					boolean f=true;
+					if(f) {
 						
 					}
 					
