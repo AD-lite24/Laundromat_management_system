@@ -59,6 +59,7 @@ public class StudentCheckStatus extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				check status
+				String id = textField.getText();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

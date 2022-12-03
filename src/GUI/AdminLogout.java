@@ -5,8 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
 
 public class AdminLogout extends JFrame {
 
@@ -38,10 +36,6 @@ public class AdminLogout extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		
-		JLabel lblL = new JLabel("Logout");
-		lblL.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblL);
 	}
 
 }

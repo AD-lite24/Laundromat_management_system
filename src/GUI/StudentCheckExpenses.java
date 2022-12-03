@@ -59,6 +59,7 @@ public class StudentCheckExpenses extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				check expense
+				String id = textField.getText();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
