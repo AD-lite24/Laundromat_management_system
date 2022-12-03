@@ -11,12 +11,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class StudentReceiveLaundry extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField idField;
+	private JComboBox comboBox;
 
 	/**
 	 * Launch the application.
@@ -51,30 +53,33 @@ public class StudentReceiveLaundry extends JFrame {
 		id.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(id);
 		
-		textField = new JTextField();
-		textField.setBounds(220, 59, 130, 25);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		idField = new JTextField();
+		idField.setBounds(220, 59, 130, 25);
+		contentPane.add(idField);
+		idField.setColumns(10);
 		
 		JLabel date = new JLabel("Date");
 		date.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		date.setBounds(56, 128, 52, 25);
 		contentPane.add(date);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(220, 128, 130, 25);
-		contentPane.add(textField_1);
-		
 		JButton btnNewButton = new JButton("Check");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				show message 
+				String id = idField.getText();
+				String day = comboBox.getSelectedItem().toString();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton.setBounds(139, 202, 124, 33);
 		contentPane.add(btnNewButton);
+		
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setBounds(220, 128, 130, 33);
+		contentPane.add(comboBox);
 	}
 
 }

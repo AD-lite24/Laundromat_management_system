@@ -1,6 +1,7 @@
 package Main;
 
 
+import Exceptions.ClothesNotDroppedException;
 import hostel.Hostel;
 
 
@@ -60,9 +61,9 @@ public class Admin {
 	}
 
 	//Schedule drop time for each hostel
-	public void scheduleDeliveryTime(Hostel hostel, int time, String day){
+	public void scheduleDeliveryTime(Hostel hostel, int deliveryTimeHours, int deliveryTimeMinutes, String day){
 		hostel.setDeliveryDay(day);
-		hostel.setDeliveryTime(time);
+		hostel.setDeliveryTime(deliveryTimeHours, deliveryTimeMinutes);
 	}
 
 	public void scheduleDropDay(String day, Hostel hostel){
