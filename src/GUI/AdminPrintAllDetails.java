@@ -39,14 +39,14 @@ public class AdminPrintAllDetails extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
+
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("AC");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 
-		LaundroSystem.admin.printDetailsOfAllStudents(); //Printing details on terminal
+		LaundroSystem.admin.printDetailsOfAllStudents(); //Printing details on terminal or on a textfile, choose.
 	}
 
 }

@@ -60,7 +60,7 @@ class DroppedClothes{
 
 public class Student {
 	
-	int id;
+	String id;
 	String name;
 	long phoneNumber;
 	Plan plan;
@@ -69,7 +69,7 @@ public class Student {
 	DroppedClothes clothes;
 	Hostel hostel;
 
-	public Student(int id, String name, long phoneNumber, Plan plan, Hostel hostel) {
+	public Student(String id, String name, long phoneNumber, Plan plan, Hostel hostel) {
 
 		this.id = id;
 		this.name = name;
