@@ -1,11 +1,13 @@
 package hostel;
 
+import java.time.LocalTime;
+
 //should hostel be subclassed? Check problem statement and let me know
 public class Hostel {
 
 	private String name;
 	private String dropDay;
-	private int deliveryTime;
+	private LocalTime deliveryTime;
 	private String deliveryDay;
 	private float revenue = 0;
 	
@@ -18,8 +20,8 @@ public class Hostel {
 	}
 	
 	
-	public void setDeliveryTime(int time) {
-		this.deliveryTime = time;
+	public void setDeliveryTime(int deliveryTimeHours, int deliveryTImeMinutes) {
+		this.deliveryTime = LocalTime.of(deliveryTimeHours, deliveryTImeMinutes);
 	}
 	
 	
@@ -41,7 +43,7 @@ public class Hostel {
 	}
 
 
-	public int getDeliveryTime() {
+	public LocalTime getDeliveryTime() {
 		return deliveryTime;
 	}
 

@@ -5,6 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
+import Main.LaundroSystem;
+import Exceptions.*;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -72,9 +77,18 @@ public class StudentDropLaundry extends JFrame {
 		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				checks plans and hostel date
-				String id = idField.getText();
-				String day = comboBox.getSelectedItem().toString();
+				String idInput = id.getText();
+				try {
+					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(ABORT, HEIGHT);
+				} 
+				catch (WeightLimitExceededException e1){
+					System.out.println(e1.getMessage());
+					System.out.println("Continuing with extra charges");
+					LaundroSystem.getStudentFromDataBase(idInput).dropClothesWithExtraCharges(ABORT, HEIGHT);
+				}
+				catch (ClothesAlreadyDroppedException e1){
+					System.out.println(e1.getMessage());
+				}
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

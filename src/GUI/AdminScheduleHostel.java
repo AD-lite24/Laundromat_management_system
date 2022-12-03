@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+import hostel.Hostel;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 
@@ -39,9 +43,22 @@ public class AdminScheduleHostel extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JLabel lblSa = new JLabel("SA");
+		//Get proper date and time
+		JLabel lblSa = new JLabel("Schedule Hostel Timings");
 		lblSa.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblSa);
+
+		String deliveryDay = ""; //Fill value in this variable 
+		String hostelName = "";
+		int deliveryTimeHours = 0;
+		int deliveryTImeMinutes = 0;
+
+		for (Hostel hostel : LaundroSystem.hostelList){
+			if (hostel.getName().equals(hostelName)){
+				LaundroSystem.admin.scheduleDeliveryTime(hostel, deliveryTimeHours, deliveryTImeMinutes, deliveryDay);
+				break;
+			}
+		}
 
 		
 	}
