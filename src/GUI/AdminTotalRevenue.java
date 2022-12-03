@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 
@@ -42,6 +45,8 @@ public class AdminTotalRevenue extends JFrame {
 		JLabel lblRa = new JLabel("Total Revenue");
 		lblRa.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblRa);
+
+		LaundroSystem.admin.getRevenuePerHostel(); //Printing on terminal (or file?)
 	}
 
 }
