@@ -43,7 +43,7 @@ public class LaundroSystem implements Serializable{
 	
 	public static void addStudent(Student student) {
 
-		dataBase.put(student.id, student);
+		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
 
 	}

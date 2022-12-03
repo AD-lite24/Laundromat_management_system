@@ -44,14 +44,14 @@ class DroppedClothes{
 
 public class Student {
 	
-	String id;
-	String name;
-	long phoneNumber;
-	Plan plan;
-	float moneyCharged = 0;
-	int numOfWashes;
-	DroppedClothes clothes;
-	Hostel hostel;
+	private String id;
+	private String name;
+	private long phoneNumber;
+	private Plan plan;
+	private float moneyCharged = 0;
+	private int numOfWashes;
+	private DroppedClothes clothes;
+	private Hostel hostel;
 
 	public Student(String id, String name, long phoneNumber, Plan plan, Hostel hostel) {
 
@@ -85,6 +85,7 @@ public class Student {
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
 	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException{
 		
+
 		if (clothes.getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}
@@ -154,6 +155,22 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", phoneNumber=" + phoneNumber + ", plan=" + plan
 				+ ", moneyCharged=" + moneyCharged + ", numOfWashes=" + numOfWashes + ", clothes=" + clothes + "]";
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public DroppedClothes getClothes() {
+		return clothes;
 	}
 
 }

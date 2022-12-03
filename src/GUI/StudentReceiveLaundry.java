@@ -18,7 +18,7 @@ public class StudentReceiveLaundry extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField idField;
-	private JComboBox comboBox;
+	private JComboBox<String> comboBox;
 
 	/**
 	 * Launch the application.
@@ -75,8 +75,8 @@ public class StudentReceiveLaundry extends JFrame {
 		btnNewButton.setBounds(139, 202, 124, 33);
 		contentPane.add(btnNewButton);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
+		comboBox = new JComboBox<>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setBounds(220, 128, 130, 33);
 		contentPane.add(comboBox);
