@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class StudentLogin extends JFrame {
 
@@ -66,7 +68,7 @@ public class StudentLogin extends JFrame {
 		
 		message = new JLabel("");
 		message.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		message.setBounds(413, 271, 105, 29);
+		message.setBounds(410, 318, 105, 29);
 		contentPane.add(message);
 		
 		id = new JTextField();
@@ -84,14 +86,21 @@ public class StudentLogin extends JFrame {
 		phone.setBounds(209, 182, 203, 26);
 		contentPane.add(phone);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
+		comboBox.setBounds(209, 245, 203, 25);
+		contentPane.add(comboBox);
+		
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Sname = name.getText();
 				String Sid = id.getText();
 				String Sphone = phone.getText();
-				String someId="something";
+				String someId = "smomid";
 				
+				String day = comboBox.getSelectedItem().toString();
 				
 				
 				try {
@@ -121,8 +130,15 @@ public class StudentLogin extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(228, 271, 120, 33);
+		btnNewButton.setBounds(188, 314, 120, 33);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblPhoneNo_1 = new JLabel("Plan");
+		lblPhoneNo_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPhoneNo_1.setBounds(62, 245, 93, 25);
+		contentPane.add(lblPhoneNo_1);
+		
+		
 		
 		
 	}
