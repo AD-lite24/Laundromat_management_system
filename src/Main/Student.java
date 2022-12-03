@@ -46,18 +46,18 @@ public class Student {
 	
 	private String id;
 	private String name;
-	private long phoneNumber;
+	private String phoneNumber;
 	private Plan plan;
 	private float moneyCharged = 0;
 	private int numOfWashes;
 	private DroppedClothes clothes;
 	private Hostel hostel;
 
-	public Student(String id, String name, long phoneNumber, Plan plan, Hostel hostel) {
+	public Student(String id, String name, String sphone, Plan plan, Hostel hostel) {
 
 		this.id = id;
 		this.name = name;
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = sphone;
 		this.plan = plan;
 		this.hostel = hostel;
 
@@ -165,7 +165,7 @@ public class Student {
 		return name;
 	}
 
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
