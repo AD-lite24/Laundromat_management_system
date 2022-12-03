@@ -5,6 +5,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+import Main.Student;
+import Exceptions.*;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -58,7 +63,13 @@ public class StudentCheckStatus extends JFrame {
 		JButton btnNewButton = new JButton("Status");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				check status
+				String id = textField.getText();
+				try{
+				LaundroSystem.getStudentFromDataBase(id).getClothesStatus();
+				}
+				catch(ClothesNotDroppedException e){
+					e.getMessage();
+				}				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

@@ -1,0 +1,11 @@
+public class ClothesException extends Exception{
+    public ClothesException(String message){
+        super(message);
+    }
+}
+
+class ClothesNotDroppedException extends ClothesException{
+    public ClothesNotDroppedException(String message){
+        super(message);
+    }
+}
