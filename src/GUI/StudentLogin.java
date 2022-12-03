@@ -6,6 +6,12 @@ import java.io.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+import Main.Student;
+import hostel.Hostel;
+import plans.Plan;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -89,12 +95,12 @@ public class StudentLogin extends JFrame {
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Plan 1", "Plan 2", "Plan 3"}));
 		comboBox.setBounds(209, 301, 203, 25);
 		contentPane.add(comboBox);
 		
-		JComboBox hostelBox = new JComboBox();
-		hostelBox.setModel(new DefaultComboBoxModel(new String[] {"Hostel 1", "Hostel 2"}));
+		JComboBox<String> hostelBox = new JComboBox<>();
+		hostelBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Krishna", "Meera", "Gandhi", "Vyas", "Shankar"}));
 		hostelBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		hostelBox.setBounds(209, 180, 203, 25);
 		contentPane.add(hostelBox);
@@ -108,25 +114,31 @@ public class StudentLogin extends JFrame {
 				
 				String planString = comboBox.getSelectedItem().toString();
 				String hostel = hostelBox.getSelectedItem().toString();
-				int planIndex = Integer.parseInt(planString.split(" ")[2]);
+				int planIndex = Integer.parseInt(planString.split(" ")[1]);
+				Hostel hostelObj = null;
+
+				for (Hostel hostelL : LaundroSystem.hostelList){
+					if (hostelL.getName().equals(hostel)){
+						hostelObj = hostelL;
+					}
+				}
 				
+				Plan planObj = null;
 				try {
-					boolean f=true;
-					if(f) {
-						
+					switch(planIndex){
+						case 1:
+						planObj = LaundroSystem.planList.get(0);
+						break;
+						case 2:
+						planObj = LaundroSystem.planList.get(1);
+						break;
+						case 3:
+						planObj = LaundroSystem.planList.get(2);
+						break;
 					}
-					
-					else {
-						FileWriter fw = new FileWriter("src/Data/"+Sid+".txt",true);
-						fw.write(Sid+" "+Sname+" "+Sphone);
-						fw.write(System.getProperty("line.separator"));
-						fw.close();
-						
-						message.setText("Success");
-					}
-					
-					
-					
+
+					Student student = new Student(Sid, Sname, Sphone, planObj, hostelObj);
+					student.registerForLaundro();
 				}
 				catch(Exception ex) {
 					
