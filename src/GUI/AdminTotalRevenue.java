@@ -93,8 +93,20 @@ public class AdminTotalRevenue extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(156, 208, 109, 33);
+		btnNewButton.setBounds(213, 210, 109, 33);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminFunctions af = new AdminFunctions();
+				af.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(61, 208, 103, 37);
+		contentPane.add(btnNewButton_1);
 
 		LaundroSystem.admin.getRevenuePerHostel(); //Printing on terminal (or file?)
 	}

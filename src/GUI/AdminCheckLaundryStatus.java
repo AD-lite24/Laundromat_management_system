@@ -86,7 +86,19 @@ public class AdminCheckLaundryStatus extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(149, 193, 135, 33);
+		btnNewButton.setBounds(228, 195, 123, 33);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminFunctions af = new AdminFunctions();
+				af.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(75, 193, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 }

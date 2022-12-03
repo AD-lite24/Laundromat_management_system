@@ -19,6 +19,7 @@ public class StudentCheckExpenses extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -66,8 +67,20 @@ public class StudentCheckExpenses extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(146, 160, 122, 33);
+		btnNewButton.setBounds(88, 158, 122, 33);
 		contentPane.add(btnNewButton);
+		
+		btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentWindow sw = new StudentWindow();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(303, 156, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 
 }

@@ -53,6 +53,18 @@ public class AdminPrintAllDetails extends JFrame {
 		btnNewButton.setBounds(152, 92, 106, 40);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminFunctions af = new AdminFunctions();
+				af.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(155, 172, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 
 }

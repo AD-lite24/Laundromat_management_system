@@ -72,7 +72,7 @@ public class AdminFunctions extends JFrame {
 		
 		JRadioButton button6 = new JRadioButton("Log Out");
 		button6.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button6.setBounds(24, 216, 382, 21);
+		button6.setBounds(24, 216, 382, 27);
 		contentPane.add(button6);
 		
 		JButton btnNewButton = new JButton("Confirm");
@@ -117,6 +117,18 @@ public class AdminFunctions extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton.setBounds(385, 122, 142, 33);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(400, 202, 103, 37);
+		contentPane.add(btnNewButton_1);
 		
 		
 	}

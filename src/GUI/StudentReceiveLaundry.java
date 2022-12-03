@@ -19,6 +19,7 @@ public class StudentReceiveLaundry extends JFrame {
 	private JPanel contentPane;
 	private JTextField idField;
 	private JComboBox<String> comboBox;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -72,7 +73,7 @@ public class StudentReceiveLaundry extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(139, 202, 124, 33);
+		btnNewButton.setBounds(226, 204, 124, 33);
 		contentPane.add(btnNewButton);
 		
 		comboBox = new JComboBox<>();
@@ -80,6 +81,18 @@ public class StudentReceiveLaundry extends JFrame {
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setBounds(220, 128, 130, 33);
 		contentPane.add(comboBox);
+		
+		btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentWindow sw = new StudentWindow();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(36, 202, 103, 37);
+		contentPane.add(btnNewButton_1);
 	}
 
 }

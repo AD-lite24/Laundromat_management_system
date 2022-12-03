@@ -43,8 +43,9 @@ public class StudentLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public StudentLogin() {
+		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 394);
+		setBounds(100, 100, 691, 480);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -63,12 +64,12 @@ public class StudentLogin extends JFrame {
 		
 		JLabel lblPhoneNo = new JLabel("Phone No.");
 		lblPhoneNo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPhoneNo.setBounds(62, 182, 93, 25);
+		lblPhoneNo.setBounds(62, 238, 93, 25);
 		contentPane.add(lblPhoneNo);
 		
 		message = new JLabel("");
 		message.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		message.setBounds(410, 318, 105, 29);
+		message.setBounds(521, 297, 105, 29);
 		contentPane.add(message);
 		
 		id = new JTextField();
@@ -83,14 +84,20 @@ public class StudentLogin extends JFrame {
 		
 		phone = new JTextField();
 		phone.setColumns(10);
-		phone.setBounds(209, 182, 203, 26);
+		phone.setBounds(209, 238, 203, 26);
 		contentPane.add(phone);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Plan 1", "Plan 2", "Plan 3", "Plan 4", "Plan 5"}));
-		comboBox.setBounds(209, 245, 203, 25);
+		comboBox.setBounds(209, 301, 203, 25);
 		contentPane.add(comboBox);
+		
+		JComboBox hostelBox = new JComboBox();
+		hostelBox.setModel(new DefaultComboBoxModel(new String[] {"Hostel 1", "Hostel 2"}));
+		hostelBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		hostelBox.setBounds(209, 180, 203, 25);
+		contentPane.add(hostelBox);
 		
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -101,6 +108,7 @@ public class StudentLogin extends JFrame {
 				String someId = "smomid";
 				
 				String day = comboBox.getSelectedItem().toString();
+				String hostel = hostelBox.getSelectedItem().toString();
 				
 				
 				try {
@@ -116,9 +124,6 @@ public class StudentLogin extends JFrame {
 						fw.close();
 						
 						message.setText("Success");
-						StudentWashPlans swp = new StudentWashPlans();
-						swp.setVisible(true);
-						dispose();
 					}
 					
 					
@@ -130,13 +135,61 @@ public class StudentLogin extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(188, 314, 120, 33);
+		btnNewButton.setBounds(237, 378, 103, 37);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblPhoneNo_1 = new JLabel("Plan");
 		lblPhoneNo_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPhoneNo_1.setBounds(62, 245, 93, 25);
+		lblPhoneNo_1.setBounds(62, 301, 93, 25);
 		contentPane.add(lblPhoneNo_1);
+		
+		JButton btnPlans = new JButton("Plans");
+		btnPlans.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentWashPlans swp = new StudentWashPlans();
+				swp.setVisible(true);
+				dispose();
+			}
+		});
+		btnPlans.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnPlans.setBounds(544, 378, 103, 37);
+		contentPane.add(btnPlans);
+		
+		JButton btnNewButton_1 = new JButton("Back");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StudentWindow sw = new StudentWindow();
+				sw.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(76, 378, 103, 37);
+		contentPane.add(btnNewButton_1);
+		
+		JLabel lblHostel = new JLabel("Hostel");
+		lblHostel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblHostel.setBounds(62, 174, 58, 25);
+		contentPane.add(lblHostel);
+		
+		JButton btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				name.setText("");
+				id.setText("");
+				phone.setText("");
+				String someId = "smomid";
+				
+				String day = comboBox.getSelectedItem().toString();
+				String hostel = hostelBox.getSelectedItem().toString();
+				
+			}
+		});
+		btnClear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnClear.setBounds(393, 378, 103, 37);
+		contentPane.add(btnClear);
+		
+		
 		
 		
 		
