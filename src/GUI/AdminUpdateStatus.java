@@ -18,6 +18,7 @@ public class AdminUpdateStatus extends JFrame {
 	private JPanel contentPane;
 	private JTextField IdField;
 	private JTextField statusField;
+	private JTextField weightField;
 
 	/**
 	 * Launch the application.
@@ -40,7 +41,7 @@ public class AdminUpdateStatus extends JFrame {
 	 */
 	public AdminUpdateStatus() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 561, 387);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -71,14 +72,14 @@ public class AdminUpdateStatus extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = IdField.getText();
-				
+				String weight = weightField.getText();
 				String status = "some status";
 				statusField.setText(status);
 				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(239, 213, 165, 39);
+		btnNewButton.setBounds(283, 283, 165, 39);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
@@ -90,12 +91,22 @@ public class AdminUpdateStatus extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(81, 214, 103, 37);
+		btnNewButton_1.setBounds(106, 284, 103, 37);
 		contentPane.add(btnNewButton_1);
 		
 		statusField = new JTextField();
 		statusField.setColumns(10);
 		statusField.setBounds(190, 144, 151, 25);
 		contentPane.add(statusField);
+		
+		JLabel lblDate_1_1 = new JLabel("Weight (Kg)");
+		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1.setBounds(60, 205, 115, 25);
+		contentPane.add(lblDate_1_1);
+		
+		weightField = new JTextField();
+		weightField.setColumns(10);
+		weightField.setBounds(190, 205, 151, 25);
+		contentPane.add(weightField);
 	}
 }
