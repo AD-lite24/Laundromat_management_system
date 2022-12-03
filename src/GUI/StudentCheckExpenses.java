@@ -24,7 +24,7 @@ public class StudentCheckExpenses extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentCheckExpenses frame = new Student();
+					StudentCheckExpenses frame = new StudentCheckExpenses();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
