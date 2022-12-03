@@ -67,8 +67,8 @@ public class StudentDropLaundry extends JFrame {
 		lblDate.setBounds(49, 121, 52, 25);
 		contentPane.add(lblDate);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(
+		JComboBox<String> comboBox = new JComboBox<>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(
 				new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		comboBox.setBounds(204, 121, 127, 25);
@@ -77,7 +77,7 @@ public class StudentDropLaundry extends JFrame {
 		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String idInput = id.getText();
+				String idInput = (String) comboBox.getSelectedItem();
 				try {
 					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(ABORT, HEIGHT);
 				} 
