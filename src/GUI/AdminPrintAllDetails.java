@@ -5,11 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import Main.LaundroSystem;
-
-import javax.swing.JLabel;
-import java.awt.Font;
 
 public class AdminPrintAllDetails extends JFrame {
 
@@ -41,12 +42,19 @@ public class AdminPrintAllDetails extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("AC");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		contentPane.add(lblNewLabel);
-
-		LaundroSystem.admin.printDetailsOfAllStudents(); //Printing details on terminal or on a textfile, choose.
+		LaundroSystem.admin.printDetailsOfAllStudents();
+		
+		JButton btnNewButton = new JButton("Print");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LaundroSystem.admin.printDetailsOfAllStudents();
+			}
+		});
+		btnNewButton.setBounds(152, 92, 106, 40);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(btnNewButton);
 	}
 
 }
