@@ -77,7 +77,7 @@ public class StudentDropLaundry extends JFrame {
 		contentPane.add(yearBox);
 		
 		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		monthBox.setBounds(374, 121, 70, 25);
 		contentPane.add(monthBox);

@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.EventQueue;
-import java.io.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -100,7 +99,7 @@ public class StudentLogin extends JFrame {
 		contentPane.add(comboBox);
 		
 		JComboBox<String> hostelBox = new JComboBox<>();
-		hostelBox.setModel(new DefaultComboBoxModel(new String[] {"Krishna", "Meera", "Gandhi", "Vyas", "Shankar", "Ram", "Budh"}));
+		hostelBox.setModel(new DefaultComboBoxModel<>(new String[] {"Krishna", "Meera", "Gandhi", "Vyas", "Shankar", "Ram", "Budh"}));
 		hostelBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		hostelBox.setBounds(209, 180, 203, 25);
 		contentPane.add(hostelBox);
@@ -189,10 +188,7 @@ public class StudentLogin extends JFrame {
 				name.setText("");
 				id.setText("");
 				phone.setText("");
-				String someId = "smomid";
 				
-				String day = comboBox.getSelectedItem().toString();
-				String hostel = hostelBox.getSelectedItem().toString();
 				
 			}
 		});

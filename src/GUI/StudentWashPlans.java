@@ -1,30 +1,21 @@
 package GUI;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Main.LaundroSystem;
-import Main.Student;
-import plans.Plan;
-
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.SwingConstants;
 
 public class StudentWashPlans extends JFrame {
 
 	private JPanel contentPane;
-	private final ButtonGroup buttonGroup = new ButtonGroup();
+	
 
 	/**
 	 * Launch the application.
