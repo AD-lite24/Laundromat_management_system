@@ -12,10 +12,12 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class AdminFunctions extends JFrame {
 
 	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -46,33 +48,39 @@ public class AdminFunctions extends JFrame {
 		contentPane.setLayout(null);
 		
 		JRadioButton button1 = new JRadioButton("Print Details of all Students");
+		buttonGroup.add(button1);
 		button1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button1.setBounds(24, 17, 382, 21);
 		contentPane.add(button1);
 		
 		JRadioButton button2 = new JRadioButton("Check Laundry Status of Student");
+		buttonGroup.add(button2);
 		button2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button2.setBounds(24, 56, 382, 21);
 		contentPane.add(button2);
 		
 		JRadioButton button3 = new JRadioButton("Update Laundry Status");
+		buttonGroup.add(button3);
 		button3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button3.setBounds(24, 95, 382, 21);
 		contentPane.add(button3);
 		
 		JRadioButton button4 = new JRadioButton("Schedule Delivery Time");
+		buttonGroup.add(button4);
 		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button4.setBounds(24, 136, 321, 21);
 		contentPane.add(button4);
 		
 		JRadioButton button5 = new JRadioButton("Total Revenue");
+		buttonGroup.add(button5);
 		button5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button5.setBounds(24, 175, 382, 21);
 		contentPane.add(button5);
 		
 		JRadioButton button6 = new JRadioButton("Log Out");
+		buttonGroup.add(button6);
 		button6.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		button6.setBounds(24, 216, 382, 27);
+		button6.setBounds(24, 216, 311, 27);
 		contentPane.add(button6);
 		
 		JButton btnNewButton = new JButton("Confirm");
