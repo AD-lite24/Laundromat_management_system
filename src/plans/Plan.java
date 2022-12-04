@@ -1,7 +1,9 @@
 package plans;
 
+import java.io.Serializable;
+
 //No subclasses of Plan, we will create objects for all plans in the main method
-public class Plan {
+public class Plan implements Serializable {
 	
 	public int getCost() {
 		return cost;

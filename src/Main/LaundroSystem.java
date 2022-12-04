@@ -1,5 +1,5 @@
 package Main;
-import java.io.Serializable;
+import java.io.*;
 import java.time.LocalTime;
 import java.util.*;
 import Exceptions.*;
@@ -40,12 +40,13 @@ public class LaundroSystem implements Serializable{
 		planList.add(plan3);
 	}
 	
-	private static Map<String, Student> dataBase = new HashMap<>();
+	private static HashMap<String, Student> dataBase = new HashMap<>();
 	
 	public static void addStudent(Student student) {
 
 		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
+		LaundroSystem.writeToDatabaseFile();
 
 	}
 
@@ -66,6 +67,52 @@ public class LaundroSystem implements Serializable{
 	
 	public static Map<String, Student> getDataBase() {
 		return dataBase; 
+	}
+
+	public static void writeToDatabaseFile(){
+		try {
+			FileOutputStream fileOut = new FileOutputStream("src/Data/database.dat");
+			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+			objectOut.writeObject(dataBase);
+			objectOut.close();
+			System.out.println("The Object  was succesfully written to a file");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeToHostelFile(){
+		try {
+			FileOutputStream fileOut = new FileOutputStream("src/Data/hostelInfo.dat");
+			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+			objectOut.writeObject(hostelList);
+			objectOut.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void readFromFile(){
+		try {
+			ObjectInputStream input1 = new ObjectInputStream(new FileInputStream("src/Data/database.dat"));
+			ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("src/Data/hostelInfo.dat"));
+			try {
+				dataBase = (HashMap<String, Student>) input1.readObject();
+				hostelList = (ArrayList<Hostel>) input2.readObject();
+				input1.close();
+				input2.close();
+			} catch (ClassNotFoundException e) {
+				
+				e.printStackTrace();
+			}
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -1,9 +1,10 @@
 package hostel;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 //should hostel be subclassed? Check problem statement and let me know
-public class Hostel {
+public class Hostel implements Serializable{
 
 	private String name;
 	private String dropDay;
