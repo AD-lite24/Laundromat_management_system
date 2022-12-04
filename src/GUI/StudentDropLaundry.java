@@ -17,6 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 
 public class StudentDropLaundry extends JFrame {
@@ -78,13 +79,14 @@ public class StudentDropLaundry extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String idInput = (String) comboBox.getSelectedItem();
+				LocalDate date = LocalDate.of(2022, 0, 0);
 				try {
-					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(ABORT, HEIGHT);
+					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(0, 0, date);
 				} 
 				catch (WeightLimitExceededException e1){
 					System.out.println(e1.getMessage());
 					System.out.println("Continuing with extra charges");
-					LaundroSystem.getStudentFromDataBase(idInput).dropClothesWithExtraCharges(ABORT, HEIGHT);
+					LaundroSystem.getStudentFromDataBase(idInput).dropClothesWithExtraCharges(0, 0, date);
 				}
 				catch (ClothesAlreadyDroppedException e1){
 					System.out.println(e1.getMessage());
