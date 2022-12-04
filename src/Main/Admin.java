@@ -17,7 +17,7 @@ public class Admin {
 	public void updateStatus(String id, int date, String status) {
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes().setStatus(status);
-		LaundroSystem.fillDatabase();	
+		LaundroSystem.updateDatabase();	
 	}
 	
 	

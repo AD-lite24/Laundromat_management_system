@@ -46,7 +46,8 @@ public class LaundroSystem implements Serializable{
 
 		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
-		LaundroSystem.fillDatabase();
+		LaundroSystem.updateDatabase();
+		LaundroSystem.fillHostelDetails(hostelList);
 	}
 
 	public static Student getStudentFromDataBase(String id){
@@ -56,10 +57,32 @@ public class LaundroSystem implements Serializable{
 	public static Map<String, Student> getDataBase() {
 		return dataBase; 
 	}
-
-	public static void fillDatabase(){
+	public static void fillDatabase(Student student){
 		try{
-			FileWriter fw = new FileWriter("Students.txt",false);
+			FileWriter fw = new FileWriter("Students.txt",true);
+			PrintWriter pw = new PrintWriter(fw);
+			StringJoiner sj = new StringJoiner(";");
+			sj.add(student.getId());
+			sj.add(student.getName());
+			sj.add(student.getPhoneNumber());
+			sj.add(student.getPlan().toString());
+			sj.add(Float.toString(student.getMoneyCharged()));
+			sj.add(Integer.toString(student.getNumOfWashes()));
+			sj.add(student.getClothes().toString());
+			sj.add(student.getHostel().getName());
+			pw.println(sj);
+			pw.close();
+
+		} catch (FileNotFoundException e){
+			System.out.println("File not found.");
+		}
+		catch (IOException e){
+			System.out.println("Text not stored.");
+		}
+	}
+	public static void updateDatabase(){
+		try{
+			FileWriter fw = new FileWriter("Students.txt",true);
 			PrintWriter pw = new PrintWriter(fw);
 			for(Map.Entry<String,Student> student : LaundroSystem.dataBase.entrySet()){
 				StringJoiner sj = new StringJoiner(";");
@@ -114,9 +137,9 @@ public class LaundroSystem implements Serializable{
 			while(sc.hasNextLine()){
 				line=sc.nextLine();
 				String[] hvalues= line.split(";");
-				String[] time = hvalues[3].split(",");
-				Hostel h = new Hostel(hvalues[1],hvalues[2], LocalTime.of(Integer.parseInt(time[0]),Integer.parseInt(time[1])),hvalues[4]);
-				h.setHostelRevenue(Float.valueOf(hvalues[5]));
+				String[] time = hvalues[3].split(":");
+				Hostel h = new Hostel(hvalues[0],hvalues[1], LocalTime.of(Integer.parseInt(time[0]),Integer.parseInt(time[1])),hvalues[2]);
+				h.setHostelRevenue(Float.valueOf(hvalues[4]));
 				hostels.add(h);		
 			}
 		} catch(FileNotFoundException e){

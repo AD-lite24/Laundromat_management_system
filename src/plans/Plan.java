@@ -46,6 +46,9 @@ public class Plan {
 		this.codeName = codeName;
 		this.quantityPerDrop = quantityPerDrop;
 	}
-	
+	@Override
+	public String toString(){
+		return ""+this.cost+","+ this.numOfWashes+","+ codeName+","+this.quantityPerDrop+"";
+	}
 }
 

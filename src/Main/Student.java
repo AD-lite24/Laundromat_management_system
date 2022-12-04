@@ -40,6 +40,10 @@ class DroppedClothes{
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
+	@Override
+	public String toString(){
+		return ""+status+","+quantiy+","+weight+","+alreadyDropped+"";
+	} 
 }
 
 public class Student {
@@ -102,7 +106,7 @@ public class Student {
 		clothes.setAlreadyDropped(true);
 		clothes.setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
-		LaundroSystem.fillDatabase();
+		LaundroSystem.updateDatabase();
 	}
 
 	public void dropClothesWithExtraCharges(int quantity, float weight){
@@ -112,14 +116,14 @@ public class Student {
 		clothes.setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
-		LaundroSystem.fillDatabase();
+		LaundroSystem.updateDatabase();
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
 		this.moneyCharged += numOfWashes*20;
 		this.numOfWashes += numOfWashes;
 		this.hostel.setHostelRevenue(numOfWashes*20);
-		LaundroSystem.fillDatabase();
+		LaundroSystem.updateDatabase();
 		LaundroSystem.fillHostelDetails(LaundroSystem.hostelList);
 	}
 
@@ -156,7 +160,7 @@ public class Student {
 		else{
 			System.out.println("Clothes not reached");
 		}
-		LaundroSystem.fillDatabase();
+		LaundroSystem.updateDatabase();
 	}
 
 	@Override
