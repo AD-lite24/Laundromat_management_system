@@ -101,13 +101,15 @@ public class StudentDropLaundry extends JFrame {
 		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String idInput = (String) yearBox.getSelectedItem();
+				String idInput = idField.getText();
 				int year = Integer.parseInt(yearBox.getSelectedItem().toString());
 				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
 				LocalDate date = LocalDate.of(year, month, dateEntered);
 				float weight = Float.parseFloat(weightField.getText());
+
+				System.out.println(idInput);
 				
 				try {
 					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(5, weight, date);
