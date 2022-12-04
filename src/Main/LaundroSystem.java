@@ -49,6 +49,17 @@ public class LaundroSystem implements Serializable{
 
 	}
 
+	public static Hostel returnHostelObj(String hostelName){
+		Hostel hostelObj = null;
+		for (Hostel hostels : hostelList){
+			if (hostels.getName().equals(hostelName)){
+				hostelObj = hostels;
+				break;
+			}
+		}
+		return hostelObj;
+	}
+
 	public static Student getStudentFromDataBase(String id){
 		return getDataBase().get(id);
 	}
