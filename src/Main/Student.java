@@ -107,7 +107,7 @@ public class Student implements Serializable{
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
 	public void dropClothes(int quantity, float weight, LocalDate date) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
 		
-		if (!LocalDate.now().getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
+		if (!date.getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
 			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
 		}
 		if (clothes.get(date).getIsAlreadyDropped()){
