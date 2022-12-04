@@ -123,7 +123,6 @@ public class Student implements Serializable{
 		clothes.put(date, new DroppedClothes(this.plan.getCost()/this.plan.getNumOfWashes()));
 		this.clothes.get(date).setQuantiy(quantity);
 		this.clothes.get(date).setWeight(weight);
-		clothes.get(date).setAlreadyDropped(true);
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		System.out.println("Clothes dropped successfully");
@@ -135,7 +134,6 @@ public class Student implements Serializable{
 		this.clothes.put(date, new DroppedClothes(this.plan.getCost()/this.plan.getNumOfWashes() + (weight -2)*25));
 		this.clothes.get(date).setQuantiy(quantity);
 		this.clothes.get(date).setWeight(weight);
-		clothes.get(date).setAlreadyDropped(true);
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
@@ -189,7 +187,6 @@ public class Student implements Serializable{
 
 		else if (clothes.get(date).getStatus().equals("On Delivery")){
 			System.out.println("Success");
-			clothes.get(date).setAlreadyDropped(false);
 			clothes.get(date).setStatus("Delivered");
 			LaundroSystem.writeToDatabaseFile();
 			LaundroSystem.writeToHostelFile();
