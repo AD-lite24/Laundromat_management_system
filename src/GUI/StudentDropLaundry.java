@@ -109,7 +109,7 @@ public class StudentDropLaundry extends JFrame {
 				LocalDate date = LocalDate.of(year, month, dateEntered);
 				float weight = Float.parseFloat(weightField.getText());
 
-				System.out.println(idInput);
+				
 				
 				try {
 					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(5, weight, date);
