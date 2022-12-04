@@ -165,7 +165,7 @@ public class Student implements Serializable, StudentFunctions{
 
 	public String getClothesStatus(LocalDate date) throws ClothesNotDroppedException {
 		if (clothes.get(date) == null) throw new ClothesNotDroppedException("Clothes not dropped on this date");
-		System.out.println("testing");
+		
 		return clothes.get(date).getStatus();
 	}
 
