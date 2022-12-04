@@ -137,7 +137,7 @@ public class AdminScheduleHostel extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(417, 387, 113, 31);
+		btnNewButton.setBounds(417, 387, 127, 31);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
