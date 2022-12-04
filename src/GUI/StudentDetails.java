@@ -42,24 +42,21 @@ public class StudentDetails extends JFrame {
 	 */
 	public StudentDetails() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 468, 321);
+		setBounds(100, 100, 556, 373);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(409, 0, 17, 253);
-		contentPane.add(scrollBar);
+		JLabel studentDetails = new JLabel("New label");
+		studentDetails.setVerticalAlignment(SwingConstants.TOP);
+		studentDetails.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		studentDetails.setBounds(10, 10, 522, 254);
+		contentPane.add(studentDetails);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(10, 10, 389, 205);
-		contentPane.add(lblNewLabel);
-		
-		lblNewLabel.setText("details of students");
+		studentDetails.setText("details of students");
+//		details of students
 		
 		JButton btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -70,9 +67,9 @@ public class StudentDetails extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(176, 225, 103, 37);
+		btnNewButton_1.setBounds(231, 275, 103, 37);
 		contentPane.add(btnNewButton_1);
-//		details of students
+
 		
 		
 	}
