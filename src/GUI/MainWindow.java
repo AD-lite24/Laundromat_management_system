@@ -19,6 +19,8 @@ public class MainWindow extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,9 +54,8 @@ public class MainWindow extends JFrame {
 		JButton btnNewButton = new JButton("Student");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				StudentWindow s = new StudentWindow();
-				s.setVisible(true);
-				dispose();
+				Thread tS = new Thread(new StudentWindow());
+				tS.start();
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -64,9 +65,9 @@ public class MainWindow extends JFrame {
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AdminWindow a = new AdminWindow();
-				a.setVisible(true);
-				dispose();
+				Thread tA = new Thread(new AdminWindow());
+				tA.start();
+				
 			}
 		});
 		btnAdmin.setFont(new Font("Tahoma", Font.PLAIN, 20));

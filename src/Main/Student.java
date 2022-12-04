@@ -105,7 +105,7 @@ public class Student implements Serializable{
 	}
 
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
-	public void dropClothes(int quantity, float weight, LocalDate date) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
+	public synchronized void dropClothes(int quantity, float weight, LocalDate date) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
 		
 		if (!date.getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
 			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
@@ -127,7 +127,7 @@ public class Student implements Serializable{
 		LaundroSystem.writeToDatabaseFile();
 	}
 
-	public void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
+	public synchronized void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
 		this.clothes.put(date, new DroppedClothes(this.plan.getCost()/this.plan.getNumOfWashes() + (weight -2)*25));
 		this.clothes.get(date).setQuantiy(quantity);
 		this.clothes.get(date).setWeight(weight);
@@ -146,7 +146,7 @@ public class Student implements Serializable{
 		LaundroSystem.writeToDatabaseFile();
 	}
 
-	public void registerForLaundro() throws UserEntryError{
+	public synchronized void registerForLaundro() throws UserEntryError{
 		if (LaundroSystem.getDataBase().containsKey(this.id)){
 			throw new UserEntryError("This ID is already registered");
 		}
