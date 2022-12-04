@@ -27,8 +27,6 @@ public class StudentReceiveLaundry extends JFrame {
 	private JComboBox<String> yearBox;
 	private JComboBox<String> monthBox;
 	private JComboBox<String> dateBox;
-	private JLabel lblStatus;
-	private JLabel statusField;
 	private JLabel lblYear;
 	private JLabel lblDate_1;
 	private JLabel lblDate_1_1;
@@ -104,7 +102,6 @@ public class StudentReceiveLaundry extends JFrame {
 				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
-				statusField.setText("status");
 				
 				LocalDate date = LocalDate.of(year, month, dateEntered);
 				System.out.println(id);
@@ -113,7 +110,7 @@ public class StudentReceiveLaundry extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(348, 330, 124, 33);
+		btnNewButton.setBounds(333, 295, 124, 33);
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("Back");
@@ -125,18 +122,8 @@ public class StudentReceiveLaundry extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(177, 328, 103, 37);
+		btnNewButton_1.setBounds(132, 293, 103, 37);
 		contentPane.add(btnNewButton_1);
-		
-		lblStatus = new JLabel("Status");
-		lblStatus.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblStatus.setBounds(56, 247, 81, 25);
-		contentPane.add(lblStatus);
-		
-		statusField = new JLabel("No Status");
-		statusField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		statusField.setBounds(220, 247, 216, 25);
-		contentPane.add(statusField);
 		
 		lblYear = new JLabel("Year");
 		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
