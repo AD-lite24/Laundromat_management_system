@@ -26,6 +26,8 @@ public class StudentReceiveLaundry extends JFrame {
 	private JComboBox<String> yearBox;
 	private JComboBox<String> monthBox;
 	private JComboBox<String> dateBox;
+	private JLabel lblStatus;
+	private JLabel statusField;
 
 	/**
 	 * Launch the application.
@@ -98,6 +100,8 @@ public class StudentReceiveLaundry extends JFrame {
 				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
+				statusField.setText("ststus");
+				
 				LocalDate date = LocalDate.of(year, month, dateEntered);
 
 				LaundroSystem.getStudentFromDataBase(id).recieveClothes(date);
@@ -119,6 +123,16 @@ public class StudentReceiveLaundry extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton_1.setBounds(99, 289, 103, 37);
 		contentPane.add(btnNewButton_1);
+		
+		lblStatus = new JLabel("Status");
+		lblStatus.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblStatus.setBounds(56, 202, 81, 25);
+		contentPane.add(lblStatus);
+		
+		statusField = new JLabel("No Status");
+		statusField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		statusField.setBounds(220, 202, 216, 25);
+		contentPane.add(statusField);
 		
 		
 	}
