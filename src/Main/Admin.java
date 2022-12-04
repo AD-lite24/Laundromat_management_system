@@ -4,10 +4,11 @@ package Main;
 import java.time.LocalDate;
 
 import Exceptions.ClothesNotDroppedException;
+import Functions.AdminFunctions;
 import hostel.Hostel;
 
 
-public class Admin {
+public class Admin implements AdminFunctions{
 	
 	static private final String userName = "admin";
 	static private final String pin = "1234";
