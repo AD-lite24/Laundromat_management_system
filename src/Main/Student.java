@@ -24,6 +24,11 @@ class DroppedClothes implements Serializable{
 	private int quantiy;
 	private float weight;
 	private boolean alreadyDropped = false;
+	private float costPerLaundry = 0;
+
+	public DroppedClothes(float costPerLaundry){
+		this.costPerLaundry = costPerLaundry;
+	}
 
 	public boolean getIsAlreadyDropped() {
 		return alreadyDropped;
@@ -48,6 +53,12 @@ class DroppedClothes implements Serializable{
 	}
 	public void setWeight(float weight) {
 		this.weight = weight;
+	}
+	public float getCostPerLaundry() {
+		return costPerLaundry;
+	}
+	public void setCostPerLaundry(int costPerLaundry) {
+		this.costPerLaundry = costPerLaundry;
 	}
 }
 
@@ -106,6 +117,8 @@ public class Student implements Serializable{
 			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("You have exceeded weight limit");
 		}
+
+		clothes.put(date, new DroppedClothes(this.plan.getCost()/this.plan.getNumOfWashes()));
 		this.clothes.get(date).setQuantiy(quantity);
 		this.clothes.get(date).setWeight(weight);
 		clothes.get(date).setAlreadyDropped(true);
@@ -115,6 +128,7 @@ public class Student implements Serializable{
 	}
 
 	public void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
+		this.clothes.put(date, new DroppedClothes(this.plan.getCost()/this.plan.getNumOfWashes() + (weight -2)*25));
 		this.clothes.get(date).setQuantiy(quantity);
 		this.clothes.get(date).setWeight(weight);
 		clothes.get(date).setAlreadyDropped(true);
@@ -153,7 +167,10 @@ public class Student implements Serializable{
 	//What is price per laundry
 	//What about status?
 	public void getStudentInfo(){
-		
+		System.out.println("Your total expenses are: " + this.moneyCharged);
+		for (Map.Entry<LocalDate, DroppedClothes> entry : clothes.entrySet()){
+			System.out.println("Date: " + entry.getKey() + " Status: " + entry.getValue().getStatus() + " Cost: " + entry.getValue().getCostPerLaundry());
+		}
 	}
 
 	public void recieveClothes(LocalDate date){
