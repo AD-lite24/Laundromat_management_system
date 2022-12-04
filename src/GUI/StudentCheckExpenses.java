@@ -79,7 +79,6 @@ public class StudentCheckExpenses extends JFrame {
 				String dates = "dates";
 				
 				expenseField.setText("expenses");
-				extraCharges.setText(charges);
 				details.setText("");
 				
 				LaundroSystem.getStudentFromDataBase(id).getStudentInfo();
