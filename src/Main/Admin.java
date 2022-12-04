@@ -19,8 +19,13 @@ public class Admin {
 	}
 	
 	public void updateStatus(String id, LocalDate date, String status) {
+		try{
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes(date).setStatus(status);
+		}
+		catch (Exception e){
+			System.out.println("Student is not registered or clothes have not been dropped");
+		}
 		LaundroSystem.writeToDatabaseFile();
 		LaundroSystem.writeToHostelFile();
 	}
