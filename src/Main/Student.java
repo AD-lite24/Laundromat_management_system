@@ -112,6 +112,9 @@ public class Student implements Serializable{
 		if (!date.getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
 			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
 		}
+		if (clothes.get(date) != null){
+			throw new ClothesAlreadyDroppedException("Clothes already dropped on this date");
+		}
 		if (weight > 2){
 			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("You have exceeded weight limit");
@@ -123,6 +126,7 @@ public class Student implements Serializable{
 		clothes.get(date).setAlreadyDropped(true);
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
+		System.out.println("Clothes dropped successfully");
 		LaundroSystem.writeToDatabaseFile();
 		LaundroSystem.writeToHostelFile();
 	}
@@ -136,6 +140,7 @@ public class Student implements Serializable{
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
 		this.hostel.setHostelRevenue((weight - 2)*25);
+		System.out.println("Clothes dropped successfully");
 		LaundroSystem.writeToDatabaseFile();
 		LaundroSystem.writeToHostelFile();
 	}
