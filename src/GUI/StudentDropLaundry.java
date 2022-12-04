@@ -24,6 +24,7 @@ public class StudentDropLaundry extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField idField;
+	private JTextField weightField;
 
 	/**
 	 * Launch the application.
@@ -46,7 +47,7 @@ public class StudentDropLaundry extends JFrame {
 	 */
 	public StudentDropLaundry() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 603, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -59,7 +60,7 @@ public class StudentDropLaundry extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		idField = new JTextField();
-		idField.setBounds(204, 50, 127, 25);
+		idField.setBounds(265, 54, 127, 25);
 		contentPane.add(idField);
 		idField.setColumns(10);
 
@@ -68,17 +69,32 @@ public class StudentDropLaundry extends JFrame {
 		lblDate.setBounds(49, 121, 52, 25);
 		contentPane.add(lblDate);
 
-		JComboBox<String> comboBox = new JComboBox<>();
-		comboBox.setModel(new DefaultComboBoxModel<String>(
-				new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		comboBox.setBounds(204, 121, 127, 25);
-		contentPane.add(comboBox);
+		JComboBox<String> yearBox = new JComboBox<>();
+		yearBox.setModel(new DefaultComboBoxModel(new String[] {"2021", "2022", "2023", "2024"}));
+		yearBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		yearBox.setBounds(265, 121, 76, 25);
+		contentPane.add(yearBox);
+		
+		JComboBox<String> monthBox = new JComboBox<String>();
+		monthBox.setModel(new DefaultComboBoxModel(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		monthBox.setBounds(374, 121, 103, 25);
+		contentPane.add(monthBox);
+		
+		JComboBox<String> dateBox = new JComboBox<String>();
+		dateBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		dateBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		dateBox.setBounds(503, 121, 52, 25);
+		contentPane.add(dateBox);
 
 		JButton btnNewButton = new JButton("Drop");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String idInput = (String) comboBox.getSelectedItem();
+				String idInput = (String) yearBox.getSelectedItem();
+				String year = yearBox.getSelectedItem().toString();
+				String month = monthBox.getSelectedItem().toString();
+				String dateEntered = dateBox.getSelectedItem().toString();
+				
 				LocalDate date = LocalDate.of(2022, 0, 0);
 				try {
 					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(0, 0, date);
@@ -97,7 +113,7 @@ public class StudentDropLaundry extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(228, 206, 103, 37);
+		btnNewButton.setBounds(342, 314, 103, 37);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
@@ -109,8 +125,20 @@ public class StudentDropLaundry extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(59, 206, 103, 37);
+		btnNewButton_1.setBounds(150, 314, 103, 37);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblDrpoWeight = new JLabel("Drpo Weight (kg)");
+		lblDrpoWeight.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDrpoWeight.setBounds(49, 198, 155, 25);
+		contentPane.add(lblDrpoWeight);
+		
+		weightField = new JTextField();
+		weightField.setColumns(10);
+		weightField.setBounds(265, 202, 127, 25);
+		contentPane.add(weightField);
+		
+		
 
 	}
 }
