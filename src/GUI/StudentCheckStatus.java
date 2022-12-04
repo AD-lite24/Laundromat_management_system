@@ -101,6 +101,8 @@ public class StudentCheckStatus extends JFrame {
 				
 				try{
 				System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
+				String status = LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date);
+				statusField.setText(status);
 				}
 				catch(ClothesException er){
 					System.out.println(er.getMessage());
