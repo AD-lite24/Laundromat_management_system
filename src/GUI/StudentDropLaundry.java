@@ -19,6 +19,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class StudentDropLaundry extends JFrame {
 
@@ -76,9 +77,9 @@ public class StudentDropLaundry extends JFrame {
 		contentPane.add(yearBox);
 		
 		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		monthBox.setBounds(374, 121, 103, 25);
+		monthBox.setBounds(374, 121, 70, 25);
 		contentPane.add(monthBox);
 		
 		JComboBox<String> dateBox = new JComboBox<String>();
@@ -89,12 +90,12 @@ public class StudentDropLaundry extends JFrame {
 
 		JLabel lblDrpoWeight = new JLabel("Drpo Weight (kg)");
 		lblDrpoWeight.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDrpoWeight.setBounds(49, 198, 155, 25);
+		lblDrpoWeight.setBounds(49, 243, 155, 25);
 		contentPane.add(lblDrpoWeight);
 		
 		weightField = new JTextField();
 		weightField.setColumns(10);
-		weightField.setBounds(265, 202, 127, 25);
+		weightField.setBounds(265, 247, 127, 25);
 		contentPane.add(weightField);
 
 		JButton btnNewButton = new JButton("Drop");
@@ -139,6 +140,24 @@ public class StudentDropLaundry extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton_1.setBounds(150, 314, 103, 37);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblYear = new JLabel("Year");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblYear.setBounds(262, 175, 76, 25);
+		contentPane.add(lblYear);
+		
+		JLabel lblDate_1_1 = new JLabel("Month");
+		lblDate_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1.setBounds(374, 175, 76, 25);
+		contentPane.add(lblDate_1_1);
+		
+		JLabel lblDate_1_1_1 = new JLabel("Date");
+		lblDate_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1_1.setBounds(503, 175, 57, 25);
+		contentPane.add(lblDate_1_1_1);
 		
 		
 		

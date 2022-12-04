@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
 
 public class StudentCheckStatus extends JFrame {
 
@@ -28,6 +29,9 @@ public class StudentCheckStatus extends JFrame {
 	private JLabel date_1;
 	private JLabel date_2;
 	private JLabel statusField;
+	private JLabel lblYear;
+	private JLabel lblDate_1;
+	private JLabel lblDate_1_1;
 
 	/**
 	 * Launch the application.
@@ -50,7 +54,7 @@ public class StudentCheckStatus extends JFrame {
 	 */
 	public StudentCheckStatus() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 595, 398);
+		setBounds(100, 100, 639, 433);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -74,7 +78,7 @@ public class StudentCheckStatus extends JFrame {
 		contentPane.add(yearBox);
 		
 		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		monthBox.setBounds(363, 112, 103, 25);
 		contentPane.add(monthBox);
@@ -104,7 +108,7 @@ public class StudentCheckStatus extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(327, 283, 111, 33);
+		btnNewButton.setBounds(355, 321, 111, 33);
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("Back");
@@ -116,7 +120,7 @@ public class StudentCheckStatus extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(118, 281, 103, 37);
+		btnNewButton_1.setBounds(171, 319, 103, 37);
 		contentPane.add(btnNewButton_1);
 		
 		date_1 = new JLabel("Date");
@@ -126,13 +130,31 @@ public class StudentCheckStatus extends JFrame {
 		
 		date_2 = new JLabel("Status");
 		date_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		date_2.setBounds(75, 165, 74, 25);
+		date_2.setBounds(75, 219, 74, 25);
 		contentPane.add(date_2);
 		
 		statusField = new JLabel("No Status");
 		statusField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		statusField.setBounds(246, 165, 119, 25);
+		statusField.setBounds(246, 219, 119, 25);
 		contentPane.add(statusField);
+		
+		lblYear = new JLabel("Year");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblYear.setBounds(246, 157, 76, 25);
+		contentPane.add(lblYear);
+		
+		lblDate_1 = new JLabel("Month");
+		lblDate_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1.setBounds(378, 157, 76, 25);
+		contentPane.add(lblDate_1);
+		
+		lblDate_1_1 = new JLabel("Date");
+		lblDate_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1.setBounds(501, 157, 57, 25);
+		contentPane.add(lblDate_1_1);
 		
 		
 	}
