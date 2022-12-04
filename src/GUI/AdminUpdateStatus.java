@@ -80,15 +80,7 @@ public class AdminUpdateStatus extends JFrame {
 		statusField.setBounds(190, 189, 151, 25);
 		contentPane.add(statusField);
 		
-		JLabel lblDate_1_1 = new JLabel("Weight (Kg)");
-		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate_1_1.setBounds(60, 250, 115, 25);
-		contentPane.add(lblDate_1_1);
-		
-		weightField = new JTextField();
-		weightField.setColumns(10);
-		weightField.setBounds(190, 250, 151, 25);
-		contentPane.add(weightField);
+
 		
 		JComboBox<String> yearBox = new JComboBox<String>();
 		yearBox.setModel(new DefaultComboBoxModel<>(new String[] {"2021", "2022", "2023", "2024"}));

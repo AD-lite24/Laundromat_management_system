@@ -61,11 +61,6 @@ public class AdminScheduleHostel extends JFrame {
 		lblNewLabel.setBounds(37, 67, 96, 25);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblDay = new JLabel("Date");
-		lblDay.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDay.setBounds(37, 124, 96, 25);
-		contentPane.add(lblDay);
-		
 		JLabel lblTime = new JLabel("Hour");
 		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTime.setBounds(37, 294, 85, 25);
@@ -94,23 +89,6 @@ public class AdminScheduleHostel extends JFrame {
 		minCombo.setBounds(382, 294, 69, 25);
 		contentPane.add(minCombo);
 		
-		JComboBox<String> yearBox = new JComboBox<String>();
-		yearBox.setModel(new DefaultComboBoxModel<>(new String[] {"2021", "2022", "2023", "2024"}));
-		yearBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		yearBox.setBounds(206, 124, 76, 25);
-		contentPane.add(yearBox);
-		
-		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
-		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		monthBox.setBounds(338, 124, 76, 25);
-		contentPane.add(monthBox);
-		
-		JComboBox<String> dateBox = new JComboBox<String>();
-		dateBox.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		dateBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		dateBox.setBounds(478, 124, 52, 25);
-		contentPane.add(dateBox);
 		
 		JComboBox<String> hostelCombo_1 = new JComboBox<String>();
 		hostelCombo_1.setModel(new DefaultComboBoxModel<>(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
@@ -151,23 +129,6 @@ public class AdminScheduleHostel extends JFrame {
 		
 		
 		
-		JLabel lblYear = new JLabel("Year");
-		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblYear.setBounds(206, 171, 76, 25);
-		contentPane.add(lblYear);
-		
-		JLabel lblDate_1_1 = new JLabel("Month");
-		lblDate_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate_1_1.setBounds(338, 171, 76, 25);
-		contentPane.add(lblDate_1_1);
-		
-		JLabel lblDate_1_1_1 = new JLabel("Date");
-		lblDate_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDate_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate_1_1_1.setBounds(476, 171, 57, 25);
-		contentPane.add(lblDate_1_1_1);
 		
 		JLabel lblDay_2 = new JLabel("Day");
 		lblDay_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
