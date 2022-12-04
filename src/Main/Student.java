@@ -93,6 +93,7 @@ public class Student implements Serializable{
 	public void setPlan(Plan plan) {
 		this.plan = plan;
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 
 	public Hostel getHostel() {
@@ -102,6 +103,7 @@ public class Student implements Serializable{
 	public void setHostel(Hostel hostel) {
 		this.hostel = hostel;
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
@@ -125,6 +127,7 @@ public class Student implements Serializable{
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 
 	public synchronized void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
@@ -135,7 +138,9 @@ public class Student implements Serializable{
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
+		this.hostel.setHostelRevenue((weight - 2)*25);
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
@@ -144,6 +149,7 @@ public class Student implements Serializable{
 
 		this.hostel.setHostelRevenue(numOfWashes*20);
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 
 	public synchronized void registerForLaundro() throws UserEntryError{
@@ -180,6 +186,7 @@ public class Student implements Serializable{
 			clothes.get(date).setAlreadyDropped(false);
 			clothes.get(date).setStatus("Delivered");
 			LaundroSystem.writeToDatabaseFile();
+			LaundroSystem.writeToHostelFile();
 		}
 		else{
 			System.out.println("Clothes not reached");

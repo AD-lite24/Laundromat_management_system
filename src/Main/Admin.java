@@ -13,6 +13,8 @@ public class Admin {
 	static private final String pin = "1234";
 	
 	public String showStudentStatus(String id, LocalDate date) {
+		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 		return LaundroSystem.getDataBase().get(id).getClothes(date).getStatus();
 	}
 	
@@ -20,6 +22,7 @@ public class Admin {
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes(date).setStatus(status);
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 	}
 	
 	//Login to admin, needs to work with gui 

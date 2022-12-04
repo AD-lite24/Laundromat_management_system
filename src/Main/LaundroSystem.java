@@ -46,6 +46,7 @@ public class LaundroSystem implements Serializable{
 		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
 		LaundroSystem.writeToDatabaseFile();
+		LaundroSystem.writeToHostelFile();
 
 	}
 
@@ -103,7 +104,7 @@ public class LaundroSystem implements Serializable{
 				dataBase = (HashMap<String, Student>) input1.readObject();
 				hostelList = (ArrayList<Hostel>) input2.readObject();
 				input1.close();
-				input2.close();
+			    input2.close();
 			} catch (ClassNotFoundException e) {
 				
 				e.printStackTrace();
