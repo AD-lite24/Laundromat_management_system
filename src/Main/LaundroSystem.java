@@ -2,11 +2,13 @@ package Main;
 import java.io.*;
 import java.time.LocalTime;
 import java.util.*;
+
+import Functions.SystemFunctions;
 import hostel.Hostel;
 import plans.Plan;
 
 
-public class LaundroSystem implements Serializable{
+public class LaundroSystem implements Serializable, SystemFunctions{
 
 	public static ArrayList<Hostel> hostelList = new ArrayList<>();
 	public static ArrayList<Plan> planList = new ArrayList<>();

@@ -11,6 +11,7 @@ import java.util.Map;
 
 
 import Exceptions.*;
+import Functions.StudentFunctions;
 
 
 class UserEntryError extends Exception {
@@ -62,7 +63,7 @@ class DroppedClothes implements Serializable{
 	}
 }
 
-public class Student implements Serializable{
+public class Student implements Serializable, StudentFunctions{
 	
 	private String id;
 	private String name;
@@ -152,9 +153,9 @@ public class Student implements Serializable{
 		LaundroSystem.writeToHostelFile();
 	}
 
-	public synchronized void registerForLaundro() throws UserEntryError{
+	public synchronized void registerForLaundro() throws UserAlreadyRegisteredException{
 		if (LaundroSystem.getDataBase().containsKey(this.id)){
-			throw new UserEntryError("This ID is already registered");
+			throw new UserAlreadyRegisteredException("This ID is already registered");
 		}
 		else {
 			LaundroSystem.addStudent(this);	//Data is being written to file in addStudent method
@@ -217,5 +218,7 @@ public class Student implements Serializable{
 	public DroppedClothes getClothes(LocalDate date) {
 		return clothes.get(date);
 	}
+
+	
 
 }
