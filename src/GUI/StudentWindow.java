@@ -60,7 +60,7 @@ public class StudentWindow extends JFrame implements Runnable{
 		button3.setBounds(48, 104, 193, 33);
 		contentPane.add(button3);
 		
-		JRadioButton button4 = new JRadioButton("Check Expenses");
+		JRadioButton button4 = new JRadioButton("Check Details");
 		buttonGroup.add(button4);
 		button4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		button4.setBounds(48, 158, 193, 33);

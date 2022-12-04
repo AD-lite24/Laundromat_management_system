@@ -60,7 +60,7 @@ public class StudentCheckExpenses extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Expenses");
+		JButton btnNewButton = new JButton("Details");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = textField.getText();
