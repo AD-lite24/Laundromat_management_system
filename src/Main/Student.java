@@ -3,12 +3,12 @@ import hostel.Hostel;
 import plans.Plan;
 
 import java.io.Serializable;
-import java.rmi.registry.LocateRegistry;
+
 import java.time.LocalDate;
-import java.util.Calendar;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.spi.CalendarDataProvider;
+
 
 import Exceptions.*;
 

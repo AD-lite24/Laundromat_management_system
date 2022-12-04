@@ -2,7 +2,6 @@ package Main;
 import java.io.*;
 import java.time.LocalTime;
 import java.util.*;
-import Exceptions.*;
 import hostel.Hostel;
 import plans.Plan;
 
