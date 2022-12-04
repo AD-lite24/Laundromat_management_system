@@ -24,9 +24,7 @@ public class StudentCheckExpenses extends JFrame {
 	private JLabel lblExpenses;
 	private JLabel expenseField;
 	private JLabel lblLaundryDropped;
-	private JLabel dateField;
-	private JLabel lblExtraChaarges;
-	private JLabel extraCharges;
+	private JLabel details;
 
 	/**
 	 * Launch the application.
@@ -82,7 +80,7 @@ public class StudentCheckExpenses extends JFrame {
 				
 				expenseField.setText("expenses");
 				extraCharges.setText(charges);
-				dateField.setText("dates");
+				details.setText("");
 				
 				LaundroSystem.getStudentFromDataBase(id).getStudentInfo();
 			}
@@ -110,28 +108,17 @@ public class StudentCheckExpenses extends JFrame {
 		lblExpenses.setBounds(66, 118, 89, 25);
 		contentPane.add(lblExpenses);
 		
-		lblLaundryDropped = new JLabel("Laundry Dropped");
+		lblLaundryDropped = new JLabel("Details");
 		lblLaundryDropped.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblLaundryDropped.setBounds(66, 248, 153, 25);
+		lblLaundryDropped.setBounds(66, 224, 153, 25);
 		contentPane.add(lblLaundryDropped);
 		
-		dateField = new JLabel("Dates");
-		dateField.setVerticalAlignment(SwingConstants.TOP);
-		dateField.setHorizontalAlignment(SwingConstants.CENTER);
-		dateField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		dateField.setBounds(304, 237, 278, 96);
-		contentPane.add(dateField);
-		
-		lblExtraChaarges = new JLabel("Extra Charges");
-		lblExtraChaarges.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblExtraChaarges.setBounds(66, 180, 129, 25);
-		contentPane.add(lblExtraChaarges);
-		
-		extraCharges = new JLabel("0");
-		extraCharges.setHorizontalAlignment(SwingConstants.CENTER);
-		extraCharges.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		extraCharges.setBounds(304, 180, 89, 25);
-		contentPane.add(extraCharges);
+		details = new JLabel("Dates");
+		details.setVerticalAlignment(SwingConstants.TOP);
+		details.setHorizontalAlignment(SwingConstants.CENTER);
+		details.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		details.setBounds(304, 203, 384, 157);
+		contentPane.add(details);
 		
 		
 	}
