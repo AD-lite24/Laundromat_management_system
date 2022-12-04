@@ -106,7 +106,7 @@ public class LaundroSystem implements Serializable, SystemFunctions{
 				
 				dataBase = (HashMap<String, Student>) input1.readObject();
 				hostelList = (ArrayList<Hostel>) input2.readObject();
-				System.out.println(hostelList);
+				
 				input1.close();
 			    input2.close();
 			} catch (ClassNotFoundException e) {
