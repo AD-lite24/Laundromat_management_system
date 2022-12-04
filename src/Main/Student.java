@@ -81,6 +81,7 @@ public class Student implements Serializable{
 
 	public void setPlan(Plan plan) {
 		this.plan = plan;
+		LaundroSystem.writeToDatabaseFile();
 	}
 
 	public Hostel getHostel() {
@@ -89,6 +90,7 @@ public class Student implements Serializable{
 
 	public void setHostel(Hostel hostel) {
 		this.hostel = hostel;
+		LaundroSystem.writeToDatabaseFile();
 	}
 
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
@@ -109,6 +111,7 @@ public class Student implements Serializable{
 		clothes.get(date).setAlreadyDropped(true);
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
+		LaundroSystem.writeToDatabaseFile();
 	}
 
 	public void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
@@ -118,6 +121,7 @@ public class Student implements Serializable{
 		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
+		LaundroSystem.writeToDatabaseFile();
 	}
 
 	public void addAdditonalWashes(int numOfWashes){
@@ -125,6 +129,7 @@ public class Student implements Serializable{
 		this.numOfWashes += numOfWashes;
 
 		this.hostel.setHostelRevenue(numOfWashes*20);
+		LaundroSystem.writeToDatabaseFile();
 	}
 
 	public void registerForLaundro() throws UserEntryError{
@@ -132,7 +137,7 @@ public class Student implements Serializable{
 			throw new UserEntryError("This ID is already registered");
 		}
 		else {
-			LaundroSystem.addStudent(this);	
+			LaundroSystem.addStudent(this);	//Data is being written to file in addStudent method
 			System.out.println("Details:");
 			System.out.println(this);
 			System.out.println("Your alloted drop day is " + this.getHostel().getDropDay());
@@ -156,6 +161,7 @@ public class Student implements Serializable{
 			System.out.println("Success");
 			clothes.get(date).setAlreadyDropped(false);
 			clothes.get(date).setStatus("Delivered");
+			LaundroSystem.writeToDatabaseFile();
 		}
 		else{
 			System.out.println("Clothes not reached");

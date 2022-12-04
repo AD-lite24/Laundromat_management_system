@@ -19,7 +19,7 @@ public class Admin {
 	public void updateStatus(String id, LocalDate date, String status) {
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes(date).setStatus(status);
-		
+		LaundroSystem.writeToDatabaseFile();
 	}
 	
 	//Login to admin, needs to work with gui 
@@ -69,10 +69,12 @@ public class Admin {
 	public void scheduleDeliveryTime(Hostel hostel, int deliveryTimeHours, int deliveryTimeMinutes, String day){
 		hostel.setDeliveryDay(day);
 		hostel.setDeliveryTime(deliveryTimeHours, deliveryTimeMinutes);
+		LaundroSystem.writeToHostelFile();
 	}
 
 	public void scheduleDropDay(String day, Hostel hostel){
 		hostel.setDropDay(day);
+		LaundroSystem.writeToHostelFile();
 	}
 
 

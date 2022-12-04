@@ -46,7 +46,7 @@ public class LaundroSystem implements Serializable{
 
 		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
-		LaundroSystem.writeToFile();
+		LaundroSystem.writeToDatabaseFile();
 
 	}
 
@@ -69,27 +69,42 @@ public class LaundroSystem implements Serializable{
 		return dataBase; 
 	}
 
-	public static void writeToFile(){
+	public static void writeToDatabaseFile(){
 		try {
-			FileOutputStream fileOut = new FileOutputStream("/Users/adityadandwate/eclipse-workspace/Laundromat/src/Data/database.dat");
+			FileOutputStream fileOut = new FileOutputStream("src/Data/database.dat");
 			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
 			objectOut.writeObject(dataBase);
 			objectOut.close();
 			System.out.println("The Object  was succesfully written to a file");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeToHostelFile(){
+		try {
+			FileOutputStream fileOut = new FileOutputStream("src/Data/hostelInfo.dat");
+			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+			objectOut.writeObject(hostelList);
+			objectOut.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public static void readFromFile(){
 		try {
-			ObjectInputStream input = new ObjectInputStream(new FileInputStream("/Users/adityadandwate/eclipse-workspace/Laundromat/src/Data/database.dat"));
+			ObjectInputStream input1 = new ObjectInputStream(new FileInputStream("src/Data/database.dat"));
+			ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("src/Data/hostelInfo.dat"));
 			try {
-				dataBase = (HashMap<String, Student>) input.readObject();
+				dataBase = (HashMap<String, Student>) input1.readObject();
+				hostelList = (ArrayList<Hostel>) input2.readObject();
+				input1.close();
+				input2.close();
 			} catch (ClassNotFoundException e) {
 				
 				e.printStackTrace();
