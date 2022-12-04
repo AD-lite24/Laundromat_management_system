@@ -182,12 +182,12 @@ public class Student implements Serializable{
 		}
 	}
 
-	public void recieveClothes(LocalDate date){
+	public void recieveClothes (LocalDate date){
 		if (clothes.get(date) == null){
 			System.out.println("You haven't dropped clothes on this day");
 		}
 
-		if (clothes.get(date).getStatus().equals("On Delivery")){
+		else if (clothes.get(date).getStatus().equals("On Delivery")){
 			System.out.println("Success");
 			clothes.get(date).setAlreadyDropped(false);
 			clothes.get(date).setStatus("Delivered");
