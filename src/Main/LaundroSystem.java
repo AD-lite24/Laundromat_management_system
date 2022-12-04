@@ -103,6 +103,7 @@ public class LaundroSystem implements Serializable, SystemFunctions{
 			ObjectInputStream input1 = new ObjectInputStream(new FileInputStream("src/Data/database.dat"));
 			ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("src/Data/hostelInfo.dat"));
 			try {
+				
 				dataBase = (HashMap<String, Student>) input1.readObject();
 				hostelList = (ArrayList<Hostel>) input2.readObject();
 				System.out.println(hostelList);
