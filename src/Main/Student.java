@@ -2,6 +2,7 @@ package Main;
 import hostel.Hostel;
 import plans.Plan;
 
+import java.io.Serializable;
 import java.rmi.registry.LocateRegistry;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -18,7 +19,7 @@ class UserEntryError extends Exception {
 	}
 }
 
-class DroppedClothes{
+class DroppedClothes implements Serializable{
 	private String status;
 	private int quantiy;
 	private float weight;
@@ -50,7 +51,7 @@ class DroppedClothes{
 	}
 }
 
-public class Student {
+public class Student implements Serializable{
 	
 	private String id;
 	private String name;

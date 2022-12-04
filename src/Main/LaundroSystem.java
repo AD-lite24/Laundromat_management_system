@@ -1,5 +1,5 @@
 package Main;
-import java.io.Serializable;
+import java.io.*;
 import java.time.LocalTime;
 import java.util.*;
 import Exceptions.*;
@@ -40,12 +40,13 @@ public class LaundroSystem implements Serializable{
 		planList.add(plan3);
 	}
 	
-	private static Map<String, Student> dataBase = new HashMap<>();
+	private static HashMap<String, Student> dataBase = new HashMap<>();
 	
 	public static void addStudent(Student student) {
 
 		dataBase.put(student.getId(), student);
 		student.getHostel().setHostelRevenue(student.getPlan().getCost());
+		LaundroSystem.writeToFile();
 
 	}
 
@@ -66,6 +67,37 @@ public class LaundroSystem implements Serializable{
 	
 	public static Map<String, Student> getDataBase() {
 		return dataBase; 
+	}
+
+	public static void writeToFile(){
+		try {
+			FileOutputStream fileOut = new FileOutputStream("/Users/adityadandwate/eclipse-workspace/Laundromat/src/Data/database.dat");
+			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+			objectOut.writeObject(dataBase);
+			objectOut.close();
+			System.out.println("The Object  was succesfully written to a file");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void readFromFile(){
+		try {
+			ObjectInputStream input = new ObjectInputStream(new FileInputStream("/Users/adityadandwate/eclipse-workspace/Laundromat/src/Data/database.dat"));
+			try {
+				dataBase = (HashMap<String, Student>) input.readObject();
+			} catch (ClassNotFoundException e) {
+				
+				e.printStackTrace();
+			}
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
 }
