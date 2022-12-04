@@ -94,8 +94,6 @@ public class AdminWindow extends JFrame {
 		btnNewButton.setBounds(246, 220, 103, 37);
 		contentPane.add(btnNewButton);
 		
-
-		
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(152, 173, 108, 25);
 		contentPane.add(lblNewLabel_1);

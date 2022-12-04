@@ -5,11 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Main.LaundroSystem;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -67,19 +71,19 @@ public class StudentReceiveLaundry extends JFrame {
 		contentPane.add(date);
 		
 		yearBox = new JComboBox<String>();
-		yearBox.setModel(new DefaultComboBoxModel(new String[] {"2021", "2022", "2023", "2024"}));
+		yearBox.setModel(new DefaultComboBoxModel<>(new String[] {"2021", "2022", "2023", "2024"}));
 		yearBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		yearBox.setBounds(220, 128, 76, 25);
 		contentPane.add(yearBox);
 		
 		monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		monthBox.setBounds(333, 128, 103, 25);
 		contentPane.add(monthBox);
 		
 		dateBox = new JComboBox<String>();
-		dateBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		dateBox.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 		dateBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		dateBox.setBounds(474, 128, 52, 25);
 		contentPane.add(dateBox);
@@ -90,9 +94,13 @@ public class StudentReceiveLaundry extends JFrame {
 //				show message 
 				String id = idField.getText();
 				
-				String year = yearBox.getSelectedItem().toString();
-				String month = monthBox.getSelectedItem().toString();
-				String dateEntered = dateBox.getSelectedItem().toString();
+				int year = Integer.parseInt(yearBox.getSelectedItem().toString());
+				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
+				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
+				
+				LocalDate date = LocalDate.of(year, month, dateEntered);
+
+				LaundroSystem.getStudentFromDataBase(id).recieveClothes(date);
 				
 			}
 		});

@@ -90,11 +90,11 @@ public class AdminCheckLaundryStatus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String id = idField.getText();
 				
-				String year = yearBox.getSelectedItem().toString();
-				String month = monthBox.getSelectedItem().toString();
-				String dateEntered = dateBox.getSelectedItem().toString();
+				int year = Integer.parseInt(yearBox.getSelectedItem().toString());
+				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
+				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
-				LocalDate date = LocalDate.of(2022, 1, 2);
+				LocalDate date = LocalDate.of(year, month, dateEntered);
 
 				try {
 					System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
