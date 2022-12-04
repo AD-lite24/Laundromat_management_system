@@ -159,8 +159,6 @@ public class Student implements Serializable, StudentFunctions{
 		}
 		else {
 			LaundroSystem.addStudent(this);	//Data is being written to file in addStudent method
-			System.out.println("Details:");
-			System.out.println(this);
 			System.out.println("Your alloted drop day is " + this.getHostel().getDropDay());
 		}
 	}
