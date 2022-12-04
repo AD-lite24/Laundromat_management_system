@@ -9,6 +9,7 @@ public class Main {
 
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
 		
+		
 		LaundroSystem laundro = new LaundroSystem();
 		LaundroSystem.readFromFile();
 

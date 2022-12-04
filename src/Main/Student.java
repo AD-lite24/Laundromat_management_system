@@ -112,9 +112,6 @@ public class Student implements Serializable{
 		if (!date.getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
 			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
 		}
-		if (clothes.get(date).getIsAlreadyDropped()){
-			throw new ClothesAlreadyDroppedException("Clothes already dropped");
-		}
 		if (weight > 2){
 			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("You have exceeded weight limit");
