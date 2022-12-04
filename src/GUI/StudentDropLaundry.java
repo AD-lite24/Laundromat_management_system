@@ -114,6 +114,9 @@ public class StudentDropLaundry extends JFrame {
 				try {
 					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(5, weight, date);
 				} 
+				catch(NullPointerException e1){
+					System.out.println("Student has not registered");
+				}
 				catch (WeightLimitExceededException e1){
 					System.out.println(e1.getMessage());
 					System.out.println("Continuing with extra charges");
