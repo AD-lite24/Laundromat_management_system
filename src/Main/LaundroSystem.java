@@ -99,12 +99,12 @@ public class LaundroSystem implements Serializable{
 	public static void readFromFile(){
 		try {
 			ObjectInputStream input1 = new ObjectInputStream(new FileInputStream("src/Data/database.dat"));
-			//ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("src/Data/hostelInfo.dat"));
+			ObjectInputStream input2 = new ObjectInputStream(new FileInputStream("src/Data/hostelInfo.dat"));
 			try {
 				dataBase = (HashMap<String, Student>) input1.readObject();
-				//hostelList = (ArrayList<Hostel>) input2.readObject();
+				hostelList = (ArrayList<Hostel>) input2.readObject();
 				input1.close();
-				//input2.close();
+				input2.close();
 			} catch (ClassNotFoundException e) {
 				
 				e.printStackTrace();
