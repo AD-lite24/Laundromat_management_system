@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class AdminWindow extends JFrame {
+public class AdminWindow extends JFrame implements Runnable {
 
 	private JPanel contentPane;
 	private JTextField userName;
@@ -27,17 +27,15 @@ public class AdminWindow extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminWindow frame = new AdminWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
+
+	public void run(){
+		try {
+			AdminWindow frame = new AdminWindow();
+			frame.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
