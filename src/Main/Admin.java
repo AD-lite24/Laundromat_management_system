@@ -51,7 +51,7 @@ public class Admin {
 	//Make a revenue class and override the toString method to print the details per hostel in list format 
 	public void getRevenuePerHostel(){
 		for (Hostel hostel : LaundroSystem.hostelList){
-			System.out.println("Revenue for hostel " + hostel.getName() + "is " + hostel.getRevenue());
+			System.out.println("Revenue for hostel " + hostel.getName() + " is " + hostel.getRevenue());
 		}
 	}
 
