@@ -110,7 +110,7 @@ public class StudentDropLaundry extends JFrame {
 				float weight = Float.parseFloat(weightField.getText());
 				
 				try {
-					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(0, weight, date);
+					LaundroSystem.getStudentFromDataBase(idInput).dropClothes(5, weight, date);
 				} 
 				catch (WeightLimitExceededException e1){
 					System.out.println(e1.getMessage());
