@@ -1,6 +1,8 @@
 package Main;
 
 
+import java.time.LocalDate;
+
 import Exceptions.ClothesNotDroppedException;
 import hostel.Hostel;
 
@@ -10,13 +12,13 @@ public class Admin {
 	static private final String userName = "admin";
 	static private final String pin = "1234";
 	
-	public String showStudentStatus(String id, int date) {
-		return LaundroSystem.getDataBase().get(id).getClothes().getStatus();
+	public String showStudentStatus(String id, LocalDate date) {
+		return LaundroSystem.getDataBase().get(id).getClothes(date).getStatus();
 	}
 	
-	public void updateStatus(String id, int date, String status) {
+	public void updateStatus(String id, LocalDate date, String status) {
 		Student student = LaundroSystem.getDataBase().get(id);
-		student.getClothes().setStatus(status);
+		student.getClothes(date).setStatus(status);
 		
 	}
 	
@@ -54,9 +56,9 @@ public class Admin {
 	}
 
 	//Return laundry Status of each student, don't forget to make an array for possible states 
-	public String checkLaundyStatus(Student student){
+	public String checkLaundyStatus(Student student, LocalDate date){
 		try {
-			return student.getClothesStatus();
+			return student.getClothesStatus(date);
 		} catch (ClothesNotDroppedException e) {
 			return e.getMessage();
 		}

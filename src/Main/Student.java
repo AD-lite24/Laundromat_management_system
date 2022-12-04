@@ -2,8 +2,11 @@ package Main;
 import hostel.Hostel;
 import plans.Plan;
 
+import java.rmi.registry.LocateRegistry;
 import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.spi.CalendarDataProvider;
 
 import Exceptions.*;
@@ -55,7 +58,7 @@ public class Student {
 	private Plan plan;
 	private float moneyCharged = 0;
 	private int numOfWashes;
-	private DroppedClothes clothes;
+	private Map<LocalDate, DroppedClothes> clothes;
 	private Hostel hostel;
 
 	public Student(String id, String name, String sphone, Plan plan, Hostel hostel) {
@@ -68,7 +71,7 @@ public class Student {
 
 		this.moneyCharged += plan.getCost();
 		this.numOfWashes = plan.getNumOfWashes();
-		this.clothes = new DroppedClothes();
+		this.clothes = new HashMap<>();
 	}
 
 	public Plan getPlan() {
@@ -88,30 +91,30 @@ public class Student {
 	}
 
 	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
-	public void dropClothes(int quantity, float weight) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
+	public void dropClothes(int quantity, float weight, LocalDate date) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
 		
 		if (!LocalDate.now().getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){
 			throw new ClothesDroppedOnWrongDayException("You cannot drop your laundry today");
 		}
-		if (clothes.getIsAlreadyDropped()){
+		if (clothes.get(date).getIsAlreadyDropped()){
 			throw new ClothesAlreadyDroppedException("Clothes already dropped");
 		}
 		if (weight > 2){
 			//Handle weight limit exceeded exception separately by including charges
 			throw new WeightLimitExceededException("You have exceeded weight limit");
 		}
-		this.clothes.setQuantiy(quantity);
-		this.clothes.setWeight(weight);
-		clothes.setAlreadyDropped(true);
-		clothes.setStatus("Waiting to be picked up"); //Initial status
+		this.clothes.get(date).setQuantiy(quantity);
+		this.clothes.get(date).setWeight(weight);
+		clothes.get(date).setAlreadyDropped(true);
+		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 	}
 
-	public void dropClothesWithExtraCharges(int quantity, float weight){
-		this.clothes.setQuantiy(quantity);
-		this.clothes.setWeight(weight);
-		clothes.setAlreadyDropped(true);
-		clothes.setStatus("Waiting to be picked up"); //Initial status
+	public void dropClothesWithExtraCharges(int quantity, float weight, LocalDate date){
+		this.clothes.get(date).setQuantiy(quantity);
+		this.clothes.get(date).setWeight(weight);
+		clothes.get(date).setAlreadyDropped(true);
+		clothes.get(date).setStatus("Waiting to be picked up"); //Initial status
 		this.numOfWashes--;
 		this.moneyCharged += (weight - 2)*25;
 	}
@@ -135,9 +138,9 @@ public class Student {
 		}
 	}
 
-	public String getClothesStatus() throws ClothesNotDroppedException {
-		if (!clothes.getIsAlreadyDropped()) throw new ClothesNotDroppedException("Clothes not dropped");
-		return clothes.getStatus();
+	public String getClothesStatus(LocalDate date) throws ClothesNotDroppedException {
+		if (!clothes.get(date).getIsAlreadyDropped()) throw new ClothesNotDroppedException("Clothes not dropped");
+		return clothes.get(date).getStatus();
 	}
 
 	//To implement
@@ -147,11 +150,11 @@ public class Student {
 		
 	}
 
-	public void recieveClothes(){
-		if (clothes.getStatus().equals("On Delivery")){
+	public void recieveClothes(LocalDate date){
+		if (clothes.get(date).getStatus().equals("On Delivery")){
 			System.out.println("Success");
-			clothes.setAlreadyDropped(false);
-			clothes.setStatus("Delivered");
+			clothes.get(date).setAlreadyDropped(false);
+			clothes.get(date).setStatus("Delivered");
 		}
 		else{
 			System.out.println("Clothes not reached");
@@ -176,8 +179,8 @@ public class Student {
 		return phoneNumber;
 	}
 
-	public DroppedClothes getClothes() {
-		return clothes;
+	public DroppedClothes getClothes(LocalDate date) {
+		return clothes.get(date);
 	}
 
 }

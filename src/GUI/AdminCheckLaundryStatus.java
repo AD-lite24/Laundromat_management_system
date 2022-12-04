@@ -16,6 +16,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 
 public class AdminCheckLaundryStatus extends JFrame {
@@ -77,9 +78,10 @@ public class AdminCheckLaundryStatus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String id = idField.getText();
 				String day = comboBox.getSelectedItem().toString();
+				LocalDate date = LocalDate.of(2022, 1, 2);
 
 				try {
-					System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus());
+					System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
 				} catch (ClothesNotDroppedException e1) {
 					System.out.println(e1.getMessage());
 				}

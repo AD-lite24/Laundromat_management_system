@@ -15,6 +15,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 
 public class StudentCheckStatus extends JFrame {
@@ -65,8 +66,9 @@ public class StudentCheckStatus extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = textField.getText();
+				LocalDate date = LocalDate.of(2022, 1, 2);
 				try{
-				System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus());
+				System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
 				}
 				catch(ClothesException er){
 					er.getMessage();
