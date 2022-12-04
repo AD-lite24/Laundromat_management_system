@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class AdminCheckLaundryStatus extends JFrame {
 
@@ -74,9 +75,9 @@ public class AdminCheckLaundryStatus extends JFrame {
 		contentPane.add(yearBox);
 		
 		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		monthBox.setBounds(338, 116, 103, 25);
+		monthBox.setBounds(338, 116, 76, 25);
 		contentPane.add(monthBox);
 		
 		JComboBox<String> dateBox = new JComboBox<String>();
@@ -118,6 +119,23 @@ public class AdminCheckLaundryStatus extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnNewButton_1.setBounds(117, 256, 103, 37);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblYear = new JLabel("Year");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblYear.setBounds(226, 169, 76, 25);
+		contentPane.add(lblYear);
+		
+		JLabel lblDate_1_1 = new JLabel("Month");
+		lblDate_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1.setBounds(338, 169, 76, 25);
+		contentPane.add(lblDate_1_1);
+		
+		JLabel lblDate_1_1_1 = new JLabel("Date");
+		lblDate_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1_1.setBounds(462, 169, 76, 25);
+		contentPane.add(lblDate_1_1_1);
 		
 		
 	}

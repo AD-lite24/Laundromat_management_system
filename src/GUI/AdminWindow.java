@@ -101,8 +101,8 @@ public class AdminWindow extends JFrame {
 		btnNewButton_1 = new JButton("Back");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AdminFunctions af = new AdminFunctions();
-				af.setVisible(true);
+				MainWindow mw = new MainWindow();
+				mw.setVisible(true);
 				dispose();
 			}
 		});
