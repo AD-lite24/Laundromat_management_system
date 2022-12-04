@@ -47,6 +47,9 @@ public class AdminPrintAllDetails extends JFrame {
 		JButton btnNewButton = new JButton("Print");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				StudentDetails sd = new StudentDetails();
+				sd.setVisible(true);
+				dispose();
 				LaundroSystem.admin.printDetailsOfAllStudents();
 			}
 		});

@@ -46,7 +46,7 @@ public class MainWindow extends JFrame {
 		JLabel lblNewLabel = new JLabel("Select User Type");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(137, 29, 123, 25);
+		lblNewLabel.setBounds(119, 29, 172, 25);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Student");

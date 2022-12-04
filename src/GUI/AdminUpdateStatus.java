@@ -47,7 +47,7 @@ public class AdminUpdateStatus extends JFrame {
 	 */
 	public AdminUpdateStatus() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 561, 387);
+		setBounds(100, 100, 657, 452);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -71,23 +71,23 @@ public class AdminUpdateStatus extends JFrame {
 		
 		JLabel lblDate_1 = new JLabel("Status");
 		lblDate_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate_1.setBounds(60, 144, 75, 25);
+		lblDate_1.setBounds(60, 189, 75, 25);
 		contentPane.add(lblDate_1);
 
 
 		statusField = new JTextField();
 		statusField.setColumns(10);
-		statusField.setBounds(190, 144, 151, 25);
+		statusField.setBounds(190, 189, 151, 25);
 		contentPane.add(statusField);
 		
 		JLabel lblDate_1_1 = new JLabel("Weight (Kg)");
 		lblDate_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDate_1_1.setBounds(60, 205, 115, 25);
+		lblDate_1_1.setBounds(60, 250, 115, 25);
 		contentPane.add(lblDate_1_1);
 		
 		weightField = new JTextField();
 		weightField.setColumns(10);
-		weightField.setBounds(190, 205, 151, 25);
+		weightField.setBounds(190, 250, 151, 25);
 		contentPane.add(weightField);
 		
 		JComboBox<String> yearBox = new JComboBox<String>();
@@ -97,7 +97,7 @@ public class AdminUpdateStatus extends JFrame {
 		contentPane.add(yearBox);
 		
 		JComboBox<String> monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		monthBox.setBounds(300, 86, 103, 25);
 		contentPane.add(monthBox);
@@ -127,7 +127,7 @@ public class AdminUpdateStatus extends JFrame {
 		});
 
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton.setBounds(283, 283, 165, 39);
+		btnNewButton.setBounds(335, 345, 165, 39);
 		contentPane.add(btnNewButton);
 		
 		
@@ -140,8 +140,26 @@ public class AdminUpdateStatus extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(106, 284, 103, 37);
+		btnNewButton_1.setBounds(165, 346, 103, 37);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblYear = new JLabel("Year");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblYear.setBounds(190, 135, 76, 25);
+		contentPane.add(lblYear);
+		
+		JLabel lblDate_1_1_1 = new JLabel("Month");
+		lblDate_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1_1.setBounds(316, 135, 76, 25);
+		contentPane.add(lblDate_1_1_1);
+		
+		JLabel lblDate_1_1_1_1 = new JLabel("Date");
+		lblDate_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDate_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDate_1_1_1_1.setBounds(448, 135, 57, 25);
+		contentPane.add(lblDate_1_1_1_1);
 		
 		
 	}
