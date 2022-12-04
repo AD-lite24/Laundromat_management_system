@@ -101,6 +101,10 @@ public class AdminCheckLaundryStatus extends JFrame {
 					System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
 				} catch (ClothesNotDroppedException e1) {
 					System.out.println(e1.getMessage());
+					System.out.println("Clothes not dropped on this day");
+				}
+				catch (NullPointerException e1){
+					System.out.println("Username does not exist in database");
 				}
 			}
 		});

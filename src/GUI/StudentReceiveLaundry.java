@@ -83,7 +83,7 @@ public class StudentReceiveLaundry extends JFrame {
 		contentPane.add(yearBox);
 		
 		monthBox = new JComboBox<String>();
-		monthBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		monthBox.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
 		monthBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		monthBox.setBounds(333, 128, 103, 25);
 		contentPane.add(monthBox);
@@ -104,10 +104,10 @@ public class StudentReceiveLaundry extends JFrame {
 				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
-				statusField.setText("ststus");
+				statusField.setText("status");
 				
 				LocalDate date = LocalDate.of(year, month, dateEntered);
-
+				System.out.println(id);
 				LaundroSystem.getStudentFromDataBase(id).recieveClothes(date);
 				
 			}

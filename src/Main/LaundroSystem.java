@@ -60,7 +60,7 @@ public class LaundroSystem implements Serializable{
 		return hostelObj;
 	}
 
-	public static Student getStudentFromDataBase(String id){
+	public static Student getStudentFromDataBase (String id){
 		return getDataBase().get(id);
 	}
 	

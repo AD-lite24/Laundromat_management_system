@@ -159,7 +159,8 @@ public class Student implements Serializable{
 	}
 
 	public String getClothesStatus(LocalDate date) throws ClothesNotDroppedException {
-		if (!clothes.get(date).getIsAlreadyDropped()) throw new ClothesNotDroppedException("Clothes not dropped");
+		if (clothes.get(date) == null) throw new ClothesNotDroppedException("Clothes not dropped on this date");
+		System.out.println("testing");
 		return clothes.get(date).getStatus();
 	}
 

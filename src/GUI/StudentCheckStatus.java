@@ -98,12 +98,13 @@ public class StudentCheckStatus extends JFrame {
 				int month = Integer.parseInt(monthBox.getSelectedItem().toString());
 				int dateEntered = Integer.parseInt(dateBox.getSelectedItem().toString());
 				
-				LocalDate date = LocalDate.of(2022, 1, 2);
+				LocalDate date = LocalDate.of(year, month, dateEntered);
+				
 				try{
 				System.out.println(LaundroSystem.getStudentFromDataBase(id).getClothesStatus(date));
 				}
 				catch(ClothesException er){
-					er.getMessage();
+					System.out.println(er.getMessage());
 				}				
 			}
 		});
