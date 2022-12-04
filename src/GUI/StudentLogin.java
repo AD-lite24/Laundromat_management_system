@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Exceptions.UserAlreadyRegisteredException;
 import Main.LaundroSystem;
 import Main.Student;
 import hostel.Hostel;
@@ -139,8 +140,8 @@ public class StudentLogin extends JFrame {
 					Student student = new Student(Sid, Sname, Sphone, planObj, hostelObj);
 					student.registerForLaundro();
 				}
-				catch(Exception ex) {
-					
+				catch(UserAlreadyRegisteredException ex) {
+					System.out.println(ex.getMessage());
 				}
 			}
 		});

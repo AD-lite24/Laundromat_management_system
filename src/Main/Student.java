@@ -107,7 +107,7 @@ public class Student implements Serializable, StudentFunctions{
 		LaundroSystem.writeToHostelFile();
 	}
 
-	//Check later!!!!!!!!!!!!!!!!! (Date and plan extra charges)
+	
 	public synchronized void dropClothes(int quantity, float weight, LocalDate date) throws ClothesAlreadyDroppedException, WeightLimitExceededException, ClothesDroppedOnWrongDayException{
 		
 		if (!date.getDayOfWeek().name().equals(this.hostel.getDropDay().toUpperCase())){

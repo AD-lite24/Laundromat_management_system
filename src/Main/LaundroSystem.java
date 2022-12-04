@@ -77,7 +77,6 @@ public class LaundroSystem implements Serializable, SystemFunctions{
 			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
 			objectOut.writeObject(dataBase);
 			objectOut.close();
-			System.out.println("The Object  was succesfully written to a file");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

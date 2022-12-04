@@ -22,6 +22,7 @@ public class Admin {
 		try{
 		Student student = LaundroSystem.getDataBase().get(id);
 		student.getClothes(date).setStatus(status);
+		System.out.println("Status successfully updated");
 		}
 		catch (Exception e){
 			System.out.println("Student is not registered or clothes have not been dropped");
