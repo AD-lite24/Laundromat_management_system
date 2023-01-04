@@ -1,2 +1,2 @@
 # Laundromat_management_system
-A management system for laundromats built in Java for the OOP course 
+A management system for a laundromat built using Java for the OOP course 
